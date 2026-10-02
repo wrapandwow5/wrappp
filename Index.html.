@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wrap and Wow 5 | Handmade Gifts</title>  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #faf6f1;
+      color: #4d4039;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #f1e5dc;
+      padding: 55px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #59483f;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 18px;
+      color: #806c61;
+    }
+
+    nav {
+      background: #fffaf6;
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #eaded5;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #59483f;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #75645b;
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 24px;
+      background: #8f7769;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 15px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 35px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fffdfb;
+      padding: 28px 20px;
+      border: 1px solid #eaded5;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(80, 60, 45, 0.05);
+    }
+
+    .icon {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #59483f;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #796960;
+    }
+
+    .product-section {
+      margin-top: 35px;
+    }
+
+    .product-section h3 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 500;
+      color: #59483f;
+      margin-bottom: 20px;
+    }
+
+    .product-card {
+      background: #fffdfb;
+      border: 1px solid #eaded5;
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(80, 60, 45, 0.05);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      background: #f1e5dc;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h4 {
+      font-size: 19px;
+      font-weight: 500;
+      color: #59483f;
+      margin-bottom: 7px;
+    }
+
+    .product-info p {
+      font-size: 14px;
+      color: #796960;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #59483f;
+      font-weight: bold;
+    }
+
+    .order {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .order p {
+      color: #75645b;
+      margin-bottom: 20px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .links a {
+      display: inline-block;
+      padding: 11px 18px;
+      border: 1px solid #d7c5b9;
+      border-radius: 22px;
+      text-decoration: none;
+      color: #59483f;
+      background: #fffdfb;
+    }
+
+    footer {
+      background: #f1e5dc;
+      text-align: center;
+      padding: 30px 20px;
+      color: #75645b;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      .hero h2 {
+        font-size: 29px;
+      }
+
+      nav a {
+        margin: 0 5px;
+        font-size: 13px;
+      }
+    }
+  </style></head><body>  <header>
+    <h1>Wrap and Wow 5</h1>
+    <p>Wrap with love ♡</p>
+  </header>  <nav>
+    <a href="#home">Home</a>
+    <a href="#gifts">Gifts</a>
+    <a href="#custom">Custom Orders</a>
+    <a href="#order">Order</a>
+  </nav>  <section id="home" class="hero">
+    <h2>Little gifts, wrapped with love.</h2><p>
+  Handmade gifts and thoughtful surprises, customized for the people
+  and moments that matter.
+</p>
+
+<a class="button" href="#order">Order your gift</a>
+
+  </section>  <section id="gifts"><h2 class="title">Our gifts</h2>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="icon">💐</div>
+    <h3>Ribbon Bouquets</h3>
+    <p>Handmade flowers and beautiful bouquet arrangements.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">🎁</div>
+    <h3>Surprise Gifts</h3>
+    <p>Personalized gift ideas for birthdays and special moments.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">🍫</div>
+    <h3>Chocolate &amp; Money Bouquets</h3>
+    <p>Sweet and creative customized arrangements.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">🎀</div>
+    <h3>Accessories</h3>
+    <p>Gajras, hair accessories, charms and handmade pieces.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">🧺</div>
+    <h3>Gift Baskets</h3>
+    <p>Mini baskets and themed gift packages made to order.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">✨</div>
+    <h3>Custom Creations</h3>
+    <p>Have an idea? Let's create something especially for you.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon">👜</div>
+    <h3>Ribbon Bags</h3>
+    <p>
+      Handmade ribbon bags with elegant details, perfect for
+      gifting and special occasions.
+    </p>
+  </div>
+
+</div>
+
+<div class="product-section">
+
+  <h3>Featured Products</h3>
+
+  <div class="grid">
+
+    <!-- Product cards will be added here with your actual photos,
+         names, descriptions and prices. -->
+
+    <div class="product-card">
+      <div class="product-info">
+        <h4>Your Product</h4>
+        <p>Product details will be added here.</p>
+        <div class="price">Price: To be added</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <section id="custom"><div class="order">
+
+  <h2 class="title">Make it yours</h2>
+
+  <p>
+    Choose your preferred colors, quantity and the date you need
+    your order by. Customization is available for many gifts.
+  </p>
+
+</div>
+
+  </section>  <section id="order"><div class="order">
+
+  <h2 class="title">Ready to order?</h2>
+
+  <p>
+    Send us a DM with your preferred colors, quantity and required date.
+  </p>
+
+  <div class="links">
+
+    <a
+      href="https://instagram.com/wrapandwow5"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Instagram · @wrapandwow5
+    </a>
+
+    <a
+      href="https://www.tiktok.com/@wrapandwow.5"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      TikTok · @wrapandwow.5
+    </a>
+
+  </div>
+
+</div>
+
+  </section>  <footer>
+    <p>© 2026 Wrap and Wow 5 · Wrap with love ♡</p>
+  </footer></body>
+</html>
