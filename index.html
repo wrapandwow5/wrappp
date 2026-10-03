@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Wrap and Wow 5 | Handmade Gifts</title>
+  <meta name="description" content="Wrap and Wow 5 — handmade gifts, ribbon flowers, bouquets, hampers and personalised surprises.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #faf6f1;
+      color: #4d4039;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: #f4e5df;
+      padding: 18px 7%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #ead5cc;
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #5a4840;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #9b7568;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 7%;
+      background:
+        linear-gradient(rgba(250,246,241,.82), rgba(250,246,241,.92)),
+        radial-gradient(circle at top left, #ead7ce, transparent 40%),
+        radial-gradient(circle at bottom right, #dfc9be, transparent 38%);
+    }
+
+    .hero-content {
+      max-width: 780px;
+    }
+
+    .small-title {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #98766b;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 1.05;
+      color: #493b35;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: auto;
+      font-size: 17px;
+      color: #6c5b53;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 13px 27px;
+      background: #806157;
+      color: white;
+      border-radius: 30px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: #654d44;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 75px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      color: #514039;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #806f67;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .products {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+    }
+
+    .product {
+      background: #fffdfb;
+      border: 1px solid #eaded7;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .product:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(85,65,55,.09);
+    }
+
+    .product-image {
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eee1da;
+      color: #8b7064;
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product h3 {
+      font-size: 21px;
+      color: #4e4039;
+      margin-bottom: 7px;
+    }
+
+    .product p {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #75665f;
+    }
+
+    .price {
+      display: inline-block;
+      margin-top: 13px;
+      font-weight: bold;
+      color: #76564b;
+      font-family: Arial, sans-serif;
+    }
+
+    .custom {
+      background: #f0e1db;
+    }
+
+    .custom-box {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      background: rgba(255,255,255,.55);
+      border: 1px solid #e2cfc7;
+      border-radius: 22px;
+      padding: 45px 25px;
+    }
+
+    .custom-box h2 {
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .custom-box p {
+      max-width: 650px;
+      margin: auto;
+      color: #6b5a52;
+    }
+
+    .services {
+      max-width: 950px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      text-align: center;
+      padding: 28px 20px;
+      background: #fffdfb;
+      border-radius: 17px;
+      border: 1px solid #eaded7;
+    }
+
+    .service h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .service p {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #76665f;
+    }
+
+    .order {
+      background: #faf1ec;
+    }
+
+    .order-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .order-box h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .order-box p {
+      font-family: Arial, sans-serif;
+      color: #6e5d55;
+    }
+
+    .steps {
+      margin: 28px auto;
+      max-width: 500px;
+      text-align: left;
+      font-family: Arial, sans-serif;
+    }
+
+    .steps div {
+      padding: 9px 0;
+    }
+
+    footer {
+      background: #493d38;
+      color: #eee5df;
+      text-align: center;
+      padding: 38px 7%;
+    }
+
+    footer h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      margin: 5px 0;
+      color: #d8ccc5;
+    }
+
+    .socials {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .socials a:hover {
+      color: white;
+    }
+
+    @media (max-width: 650px) {
+      header {
+        padding: 15px 5%;
+      }
+
+      .nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 12px;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .hero {
+        min-height: 75vh;
+        padding: 55px 6%;
+      }
+
+      .product-image {
+        height: 170px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <a href="#home" class="logo">Wrap and Wow 5</a>
+
+      <nav class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#custom">Custom</a>
+        <a href="#order">Order</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="small-title">Handmade • Thoughtful • Wrapped with love</div>
+
+        <h1>Wrap and Wow 5</h1>
+
+        <p>
+          Handmade gifts and little surprises, created with care
+          for birthdays, celebrations and the people who mean the most.
+        </p>
+
+        <a class="button" href="#products">Explore Collection</a>
+      </div>
+    </section>
+
+
+    <section id="products">
+
+      <div class="section-title">
+        <h2>Our Collection</h2>
+        <p>Handmade pieces made to make someone's day a little more special.</p>
+      </div>
+
+      <div class="products">
+
+        <article class="product">
+          <div class="product-image">Ribbon Flowers & Bouquets</div>
+          <div class="product-info">
+            <h3>Ribbon Flowers</h3>
+            <p>Handmade ribbon flowers, bouquets and beautiful floral arrangements.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Ribbon Gajra</div>
+          <div class="product-info">
+            <h3>Ribbon Gajra</h3>
+            <p>Reusable handmade gajras created from satin ribbon.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Bracelets & Bands</div>
+          <div class="product-info">
+            <h3>Bracelets</h3>
+            <p>Simple handmade bracelets and bands for gifting or keeping.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Hairpins & Accessories</div>
+          <div class="product-info">
+            <h3>Hair Accessories</h3>
+            <p>Handmade hairpins and pretty little accessories.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Mini Gift Baskets</div>
+          <div class="product-info">
+            <h3>Mini Baskets</h3>
+            <p>Small personalised baskets filled with carefully selected gifts.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Surprise Gifts</div>
+          <div class="product-info">
+            <h3>Surprise Gifts</h3>
+            <p>Thoughtful little surprises prepared according to your occasion.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Glitter Flowers</div>
+          <div class="product-info">
+            <h3>Glitter Flowers</h3>
+            <p>Decorative handmade flowers for gifting and special occasions.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Bag & Bow Charms</div>
+          <div class="product-info">
+            <h3>Bag Charms</h3>
+            <p>Cute handmade charms and bows to add a personal touch.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Mini Sticker Packages</div>
+          <div class="product-info">
+            <h3>Sticker Packs</h3>
+            <p>Mini decorative sticker packages for journals, gifts and more.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Pearl Head Crown</div>
+          <div class="product-info">
+            <h3>Pearl Head Crown</h3>
+            <p>A delicate handmade pearl accessory for special occasions.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Chocolate Floral Cake</div>
+          <div class="product-info">
+            <h3>Chocolate Floral Cake</h3>
+            <p>A sweet handmade-style gifting arrangement combining chocolates and flowers.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Chocolate & Money Bouquet</div>
+          <div class="product-info">
+            <h3>Chocolate + Money Bouquet</h3>
+            <p>A personalised bouquet combining chocolates with currency notes.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Birthday Magazine</div>
+          <div class="product-info">
+            <h3>Birthday Magazine</h3>
+            <p>A personalised magazine-style birthday gift made especially for someone special.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">Satin Ribbon Bag</div>
+          <div class="product-info">
+            <h3>Satin Ribbon Bag</h3>
+            <p>A handmade crochet-style satin ribbon bag with a pearl handle.</p>
+            <span class="price">Price depends on design</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <section class="custom" id="custom">
+
+      <div class="custom-box">
+        <h2>Make It Yours</h2>
+
+        <p>
+          Want something different? We create customised gifts according
+          to your preferred colours, quantity, occasion and style.
+        </p>
+
+        <a class="button" href="https://www.instagram.com/wrapandwow5/" target="_blank">
+          Customise Your Gift
+        </a>
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <div class="section-title">
+        <h2>What We Offer</h2>
+        <p>Made with attention to the little details.</p>
+      </div>
+
+      <div class="services">
+
+        <div class="service">
+          <h3>Handmade</h3>
+          <p>Each piece is prepared with care rather than mass-produced.</p>
+        </div>
+
+        <div class="service">
+          <h3>Customisation</h3>
+          <p>Choose colours, quantities and details according to your occasion.</p>
+        </div>
+
+        <div class="service">
+          <h3>Gift Ready</h3>
+          <p>Beautifully prepared pieces made for gifting.</p>
+        </div>
+
+        <div class="service">
+          <h3>Delivery & Pickup</h3>
+          <p>Delivery and take-away service available.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="order" id="order">
+
+      <div class="order-box">
+
+        <h2>Ready to Order?</h2>
+
+        <p>
+          Send us a DM with the details of the gift you have in mind.
+        </p>
+
+        <div class="steps">
+          <div><strong>1.</strong> Tell us what you'd like.</div>
+          <div><strong>2.</strong> Share your preferred colours and quantity.</div>
+          <div><strong>3.</strong> Tell us the date you need it.</div>
+          <div><strong>4.</strong> We'll confirm the price and details.</div>
+        </div>
+
+        <a
+          class="button"
+          href="https://www.instagram.com/wrapandwow5/"
+          target="_blank"
+        >
+          Order on Instagram
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <h3>Wrap and Wow 5</h3>
+
+    <p>Handmade gifts • Wrapped with love</p>
+
+    <p>Sialkot, Pakistan</p>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/wrapandwow5/" target="_blank">
+        Instagram
+      </a>
+
+      <a href="https://www.tiktok.com/@wrapandwow.5" target="_blank">
+        TikTok
+      </a>
+    </div>
+
+  </footer>
+
+</body>
+</html>
