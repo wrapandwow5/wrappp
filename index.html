@@ -1,1146 +1,1592 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Wrap and Wow 5 | Handmade Gifts</title>
-  <meta name="description" content="Wrap and Wow 5 — handmade gifts, ribbon flowers, bouquets, accessories, hampers and personalised surprises.">
+<title>Wrap & Wow 5 | Handmade Gifts</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta name="description" content="Wrap & Wow 5 - Handmade flowers, bouquets, gifts, accessories and customised creations.">
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+:root {
+    --cream: #fbf5ee;
+    --cream-dark: #f1e2d6;
+    --white: #fffdf9;
+    --rose: #b9797d;
+    --rose-dark: #875259;
+    --gold: #b99a68;
+    --brown: #493c38;
+    --muted: #81736d;
+    --border: #e8d8ce;
+    --shadow: 0 10px 30px rgba(82, 58, 49, 0.10);
+}
 
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #faf6f1;
-      color: #4d4039;
-      line-height: 1.6;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    header {
-      background: #f4e5df;
-      padding: 17px 6%;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #ead5cc;
-    }
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--brown);
+    font-family: Georgia, "Times New Roman", serif;
+}
 
-    .nav {
-      max-width: 1180px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 253, 249, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--brown);
+}
+
+.brand-sub {
+    margin-top: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+/* ================= MENU ================= */
+
+.menu-button {
+    border: none;
+    background: transparent;
+    color: var(--rose-dark);
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px 8px;
+}
+
+.menu {
+    display: none;
+
+    position: absolute;
+    right: 18px;
+    top: 78px;
+
+    width: min(360px, calc(100% - 36px));
+    max-height: 75vh;
+    overflow-y: auto;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    padding: 8px;
+    box-shadow: var(--shadow);
+}
+
+.menu.open {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    padding: 13px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.menu a:hover {
+    background: var(--cream-dark);
+    color: var(--rose-dark);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 20px 45px;
+    text-align: center;
+}
+
+.hero-small {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.hero h1 {
+    margin: 15px 0 10px;
+    font-size: clamp(40px, 8vw, 68px);
+    color: var(--rose-dark);
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.hero-button {
+    display: inline-block;
+
+    background: var(--rose-dark);
+    color: white;
+
+    padding: 13px 22px;
+    border-radius: 30px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* ================= CATEGORY NAV ================= */
+
+.category-nav {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 0 18px 15px;
+
+    display: flex;
+    gap: 8px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-nav a {
+    flex: 0 0 auto;
+
+    background: white;
+    border: 1px solid var(--border);
+
+    padding: 9px 14px;
+    border-radius: 25px;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+
+    color: var(--rose-dark);
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 42px 18px 5px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: var(--rose-dark);
+    font-size: 28px;
+}
+
+.section-heading p {
+    margin: 8px 0 0;
+
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ================= PRODUCT GRID ================= */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.product-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 6px 22px rgba(82, 58, 49, 0.07);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= PRODUCT IMAGE ================= */
+
+.product-image {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    background: #f5ece5;
+
+    overflow: hidden;
+}
+
+.product-image a {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    transition: transform 0.25s ease;
+}
+
+.product-image a:hover img {
+    transform: scale(1.03);
+}
+
+/* ================= SLIDER ================= */
+
+.slider-button {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.92);
+
+    color: var(--rose-dark);
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+.slider-prev {
+    left: 8px;
+}
+
+.slider-next {
+    right: 8px;
+}
+
+.image-dots {
+    position: absolute;
+
+    bottom: 8px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+.image-dot {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin: 0 3px;
+
+    border-radius: 50%;
+
+    background: #d5c2b9;
+
+    cursor: pointer;
+}
+
+.image-dot.active {
+    background: var(--rose-dark);
+}
+
+/* ================= PRODUCT INFO ================= */
+
+.product-info {
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.product-name {
+    margin: 0 0 7px;
+
+    color: var(--brown);
+
+    font-size: 17px;
+    line-height: 1.4;
+
+    /*
+       TWO-LINE PRODUCT NAME SPACE
+    */
+    min-height: 48px;
+}
+
+.product-description {
+    color: var(--muted);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    line-height: 1.55;
+
+    min-height: 35px;
+}
+
+.product-price {
+    margin: 9px 0 5px;
+
+    color: var(--rose-dark);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.custom-colours {
+    margin-bottom: 12px;
+
+    color: var(--rose);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+}
+
+.order-button {
+    display: block;
+
+    margin-top: auto;
+
+    padding: 10px;
+
+    background: var(--rose-dark);
+    color: white;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.order-button:hover {
+    background: #714149;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: 65px;
+
+    padding: 38px 18px;
+
+    background: var(--cream-dark);
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+}
+
+footer h3 {
+    margin: 0 0 8px;
+
+    color: var(--rose-dark);
+}
+
+footer p {
+    margin: 6px 0;
+
+    color: var(--muted);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.social-links {
+    margin-top: 18px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.social-links a {
+    background: white;
+
+    padding: 9px 15px;
+
+    border-radius: 22px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    border: 1px solid var(--border);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .header-inner {
+        padding: 8px 12px;
     }
 
     .logo {
-      font-size: 23px;
-      font-weight: bold;
-      color: #5a4840;
-      white-space: nowrap;
+        width: 50px;
+        height: 50px;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 21px;
-      font-size: 14px;
-      font-family: Arial, sans-serif;
+    .brand-name {
+        font-size: 17px;
     }
 
-    .nav-links a:hover {
-      color: #9b7568;
+    .brand-sub {
+        font-size: 8px;
     }
 
     .hero {
-      min-height: 82vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 75px 7%;
-      background:
-        linear-gradient(rgba(250,246,241,.82), rgba(250,246,241,.93)),
-        radial-gradient(circle at top left, #ead7ce, transparent 40%),
-        radial-gradient(circle at bottom right, #dfc9be, transparent 38%);
+        padding: 50px 15px 38px;
     }
 
-    .hero-content {
-      max-width: 780px;
+    .hero h1 {
+        font-size: 42px;
     }
 
-    .small-title {
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: #98766b;
-      margin-bottom: 15px;
-      font-family: Arial, sans-serif;
+    .section {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    h1 {
-      font-size: clamp(42px, 8vw, 78px);
-      line-height: 1.05;
-      color: #493b35;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 640px;
-      margin: auto;
-      font-size: 17px;
-      color: #6c5b53;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 25px;
-      background: #806157;
-      color: white;
-      border-radius: 30px;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      transition: .2s;
-    }
-
-    .button:hover {
-      background: #654d44;
-      transform: translateY(-2px);
-    }
-
-    section {
-      padding: 75px 6%;
-    }
-
-    .section-title {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 45px;
-    }
-
-    .section-title h2 {
-      font-size: 36px;
-      color: #514039;
-      margin-bottom: 8px;
-    }
-
-    .section-title p {
-      color: #806f67;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-
-    /* CATEGORY NAVIGATION */
-
-    .category-nav {
-      max-width: 1100px;
-      margin: 0 auto 55px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .category-nav a {
-      background: #fffdfb;
-      border: 1px solid #e5d6cf;
-      border-radius: 30px;
-      padding: 9px 15px;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      color: #6f5b53;
-      transition: .2s;
-    }
-
-    .category-nav a:hover {
-      background: #ead8d0;
-    }
-
-    /* CATEGORIES */
-
-    .category {
-      max-width: 1180px;
-      margin: 0 auto 70px;
-      scroll-margin-top: 100px;
-    }
-
-    .category-heading {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .category-heading h3 {
-      font-size: 29px;
-      color: #514039;
-    }
-
-    .category-line {
-      flex: 1;
-      height: 1px;
-      background: #dfcec5;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-      gap: 22px;
-    }
-
-    .product {
-      background: #fffdfb;
-      border: 1px solid #eaded7;
-      border-radius: 18px;
-      overflow: hidden;
-      transition: .25s;
-    }
-
-    .product:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(85,65,55,.09);
-    }
-
-    .product-image {
-      height: 210px;
-      background: #eee1da;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .photo-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 25px;
-      color: #8b7064;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
+    /*
+       TWO PRODUCTS PER ROW
+    */
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
     }
 
     .product-info {
-      padding: 19px;
+        padding: 10px;
     }
 
-    .product h4 {
-      font-size: 20px;
-      color: #4e4039;
-      margin-bottom: 7px;
+    .product-name {
+        font-size: 14px;
+        min-height: 42px;
     }
 
-    .product p {
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: #75665f;
-      min-height: 42px;
+    .product-description {
+        font-size: 9px;
+        min-height: 32px;
     }
 
-    .price {
-      display: block;
-      margin-top: 12px;
-      font-weight: bold;
-      color: #76564b;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-    }
-
-    .order-small {
-      display: inline-block;
-      margin-top: 13px;
-      padding: 8px 15px;
-      border-radius: 20px;
-      background: #806157;
-      color: white;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-    }
-
-    .order-small:hover {
-      background: #654d44;
-    }
-
-    /* CUSTOM */
-
-    .custom {
-      background: #f0e1db;
-    }
-
-    .custom-box {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      background: rgba(255,255,255,.55);
-      border: 1px solid #e2cfc7;
-      border-radius: 22px;
-      padding: 45px 25px;
-    }
-
-    .custom-box h2 {
-      font-size: 34px;
-      margin-bottom: 14px;
-    }
-
-    .custom-box p {
-      max-width: 650px;
-      margin: auto;
-      color: #6b5a52;
-    }
-
-    /* SERVICES */
-
-    .services {
-      max-width: 1000px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 20px;
-    }
-
-    .service {
-      text-align: center;
-      padding: 28px 20px;
-      background: #fffdfb;
-      border-radius: 17px;
-      border: 1px solid #eaded7;
-    }
-
-    .service h3 {
-      margin-bottom: 8px;
-      font-size: 20px;
-    }
-
-    .service p {
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: #76665f;
-    }
-
-    /* ORDER */
-
-    .order {
-      background: #faf1ec;
-    }
-
-    .order-box {
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .order-box h2 {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
-
-    .order-box p {
-      font-family: Arial, sans-serif;
-      color: #6e5d55;
-    }
-
-    .steps {
-      margin: 28px auto;
-      max-width: 500px;
-      text-align: left;
-      font-family: Arial, sans-serif;
-    }
-
-    .steps div {
-      padding: 9px 0;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #493d38;
-      color: #eee5df;
-      text-align: center;
-      padding: 38px 7%;
-    }
-
-    footer h3 {
-      font-size: 25px;
-      margin-bottom: 8px;
-    }
-
-    footer p {
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      margin: 5px 0;
-      color: #d8ccc5;
-    }
-
-    .socials {
-      margin-top: 18px;
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-
-    .socials a:hover {
-      color: white;
-    }
-
-    @media (max-width: 650px) {
-      header {
-        padding: 14px 5%;
-      }
-
-      .nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .nav-links {
-        gap: 13px;
+    .product-price {
         font-size: 11px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-
-      .hero {
-        min-height: 75vh;
-        padding: 55px 6%;
-      }
-
-      .category-heading h3 {
-        font-size: 24px;
-      }
-
-      .category-line {
-        display: none;
-      }
-
-      .product-image {
-        height: 190px;
-      }
     }
-  </style>
+
+    .custom-colours {
+        font-size: 9px;
+    }
+
+    .order-button {
+        padding: 9px 4px;
+        font-size: 9px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <a href="#home" class="logo">Wrap and Wow 5</a>
+<!-- ================= HEADER ================= -->
 
-    <nav class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#custom">Custom</a>
-      <a href="#order">Order</a>
-    </nav>
-  </div>
+<header class="header">
+
+    <div class="header-inner">
+
+        <a href="#top" class="brand">
+
+            <!-- YOUR LOGO -->
+            <img
+                src="images/logo.png"
+                alt="Wrap & Wow 5 Logo"
+                class="logo"
+            >
+
+            <span class="brand-text">
+                <span class="brand-name">Wrap & Wow 5</span>
+                <span class="brand-sub">HANDMADE WITH LOVE</span>
+            </span>
+
+        </a>
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+        <nav id="menu" class="menu"></nav>
+
+    </div>
+
 </header>
 
-<main>
 
-  <!-- HERO -->
+<!-- ================= MAIN ================= -->
 
-  <section class="hero" id="home">
-    <div class="hero-content">
+<main id="top">
 
-      <div class="small-title">
-        Handmade • Thoughtful • Wrapped with love
-      </div>
+    <!-- HERO -->
 
-      <h1>Wrap and Wow 5</h1>
+    <section class="hero">
 
-      <p>
-        Handmade gifts and little surprises, created with care
-        for birthdays, celebrations and the people who mean the most.
-      </p>
+        <div class="hero-small">
+            Handmade • Custom • Thoughtful
+        </div>
 
-      <a class="button" href="#products">Explore Collection</a>
+        <h1>
+            Wrap & Wow 5
+        </h1>
 
-    </div>
-  </section>
+        <p>
+            Handmade flowers, bouquets, gifts and beautiful little
+            details made especially for your special moments.
+        </p>
 
+        <a
+            class="hero-button"
+            href="https://www.instagram.com/wrapandwow5/"
+            target="_blank"
+        >
+            Order on Instagram
+        </a>
 
-  <!-- PRODUCTS -->
+    </section>
 
-  <section id="products">
 
-    <div class="section-title">
-      <h2>Our Collection</h2>
-      <p>
-        Explore our handmade pieces, arranged by category.
-        Every piece can be customised according to your occasion and style.
-      </p>
-    </div>
+    <!-- CATEGORY QUICK NAVIGATION -->
 
+    <div
+        id="categoryNav"
+        class="category-nav"
+    ></div>
 
-    <!-- CATEGORY QUICK LINKS -->
 
-    <div class="category-nav">
-      <a href="#flowers">Ribbon Flowers</a>
-      <a href="#gajras">Gajras</a>
-      <a href="#bracelets">Bracelets</a>
-      <a href="#hair">Hair Accessories</a>
-      <a href="#baskets">Mini Baskets</a>
-      <a href="#surprises">Surprise Gifts</a>
-      <a href="#glitter">Glitter Flowers</a>
-      <a href="#charms">Bag Charms</a>
-      <a href="#stickers">Sticker Packs</a>
-      <a href="#crown">Pearl Crown</a>
-      <a href="#chocolate-cake">Chocolate Floral Cake</a>
-      <a href="#money-bouquet">Chocolate + Money</a>
-      <a href="#magazine">Birthday Magazine</a>
-      <a href="#ribbon-bag">Satin Ribbon Bag</a>
-    </div>
+    <!-- CATALOGUE -->
 
-
-    <!-- RIBBON FLOWERS -->
-    
-<div class="category" id="dahlias">
-
-  <div class="category-heading">
-    <h3>Dahlia Ribbon Flowers</h3>
-    <div class="category-line"></div>
-  </div>
-
-  <div class="products">
-
-    <article class="product">
-      <div class="product-image">
-        <img src="images/IMG-20261002-WA0010.jpg" alt="Dahlia Ribbon Flowers"
-             onerror="this.style.display='none'">
-        <div class="photo-placeholder">Dahlia Ribbon Flower</div>
-      </div>
-
-      <div class="product-info">
-        <h4>Dahlia Ribbon Flowers</h4>
-        <p>Handmade satin ribbon dahlias in Black, Mustard Gold and White. Custom colours are also available.</p>
-        <span class="price">Rs. 350 each</span>
-        <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-      </div>
-    </article>
-
-    <article class="product">
-      <div class="product-image">
-        <img src="images/IMG-20260819-WA0022.jpg" alt="Dahlia Ribbon Flowers"
-             onerror="this.style.display='none'">
-        <div class="photo-placeholder">Dahlia Ribbon Flower</div>
-      </div>
-
-      <div class="product-info">
-        <h4>Dahlia Ribbon Flowers</h4>
-        <p>Available in Black, Mustard Gold and White, with custom colours available on request.</p>
-        <span class="price">Rs. 350 each</span>
-        <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-      </div>
-    </article>
-
-  </div>
-</div>
-    <div class="category" id="flowers">
-
-      <div class="category-heading">
-        <h3>Ribbon Flowers & Bouquets</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/maroon-ribbon-flower.jpg" alt="Maroon Ribbon Flower"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Maroon Ribbon Flower photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Maroon Ribbon Flower</h4>
-            <p>A handmade satin ribbon flower in a rich maroon shade.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/sunflower-ribbon-flower.jpg" alt="Sunflower Ribbon Flower"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Sunflower Ribbon Flower photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Sunflower Ribbon Flower</h4>
-            <p>A cheerful handmade ribbon flower inspired by a sunflower.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/tulip-ribbon-flower.jpg" alt="Tulip Ribbon Flower"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Tulip Ribbon Flower photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Tulip Ribbon Flower</h4>
-            <p>A delicate handmade tulip-style flower made from satin ribbon.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/vase-ribbon-bunch.jpg" alt="Ribbon Vase Bunch"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Vase Ribbon Bunch photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Ribbon Vase Bunch</h4>
-            <p>A handmade arrangement of ribbon flowers prepared as a vase bunch.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- GAJRAS -->
-
-    <div class="category" id="gajras">
-
-      <div class="category-heading">
-        <h3>Ribbon Gajras</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/ribbon-gajra.jpg" alt="Ribbon Gajra"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Ribbon Gajra photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Ribbon Gajra</h4>
-            <p>Reusable handmade gajras created from satin ribbon.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- BRACELETS -->
-
-    <div class="category" id="bracelets">
-
-      <div class="category-heading">
-        <h3>Bracelets & Bands</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/bracelet.jpg" alt="Handmade Bracelet"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Bracelet photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Handmade Bracelets</h4>
-            <p>Simple handmade bracelets and bands for gifting or keeping.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- HAIR ACCESSORIES -->
-
-    <div class="category" id="hair">
-
-      <div class="category-heading">
-        <h3>Hairpins & Accessories</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/hairpins.jpg" alt="Handmade Hairpins"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Hairpins photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Handmade Hairpins</h4>
-            <p>Pretty handmade hairpins created for everyday wear or gifting.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- MINI BASKETS -->
-
-    <div class="category" id="baskets">
-
-      <div class="category-heading">
-        <h3>Mini Gift Baskets</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/mini-basket.jpg" alt="Mini Gift Basket"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Mini Basket photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Mini Gift Basket</h4>
-            <p>A small personalised basket filled with carefully selected gifts.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- SURPRISE GIFTS -->
-
-    <div class="category" id="surprises">
-
-      <div class="category-heading">
-        <h3>Surprise Gifts</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/surprise-gift.jpg" alt="Surprise Gift"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Surprise Gift photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Surprise Gift</h4>
-            <p>Thoughtful little surprises prepared according to your occasion.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- GLITTER FLOWERS -->
-
-    <div class="category" id="glitter">
-
-      <div class="category-heading">
-        <h3>Glitter Flowers</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/glitter-flower.jpg" alt="Glitter Flower"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Glitter Flower photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Glitter Flowers</h4>
-            <p>Decorative handmade glitter flowers for gifting and special occasions.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- BAG CHARMS -->
-
-    <div class="category" id="charms">
-
-      <div class="category-heading">
-        <h3>Bag & Bow Charms</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/bag-charm.jpg" alt="Bag Charm"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Bag Charm photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Bag Charms</h4>
-            <p>Cute handmade charms and bows to add a personal touch.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- STICKER PACKS -->
-
-    <div class="category" id="stickers">
-
-      <div class="category-heading">
-        <h3>Mini Sticker Packages</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/sticker-pack.jpg" alt="Mini Sticker Package"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Sticker Pack photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Mini Sticker Pack</h4>
-            <p>Mini decorative sticker packages for journals, gifts and more.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- PEARL CROWN -->
-
-    <div class="category" id="crown">
-
-      <div class="category-heading">
-        <h3>Pearl Head Crown</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/pearl-head-crown.jpg" alt="Pearl Head Crown"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Pearl Head Crown photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Pearl Head Crown</h4>
-            <p>A delicate handmade pearl accessory for special occasions.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- CHOCOLATE FLORAL CAKE -->
-
-    <div class="category" id="chocolate-cake">
-
-      <div class="category-heading">
-        <h3>Chocolate Floral Cake</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/chocolate-floral-cake.jpg" alt="Chocolate Floral Cake"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Chocolate Floral Cake photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Chocolate Floral Cake</h4>
-            <p>A decorative gifting arrangement combining chocolates and handmade flowers.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- CHOCOLATE + MONEY -->
-
-    <div class="category" id="money-bouquet">
-
-      <div class="category-heading">
-        <h3>Chocolate & Money Bouquets</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/chocolate-money-bouquet.jpg" alt="Chocolate and Money Bouquet"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Chocolate + Money Bouquet photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Chocolate + Money Bouquet</h4>
-            <p>A personalised bouquet combining chocolates with currency notes.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- BIRTHDAY MAGAZINE -->
-
-    <div class="category" id="magazine">
-
-      <div class="category-heading">
-        <h3>Birthday Magazine</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/birthday-magazine.jpg" alt="Birthday Magazine"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Birthday Magazine photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Birthday Magazine</h4>
-            <p>A personalised magazine-style birthday gift made especially for someone special.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-
-    <!-- SATIN RIBBON BAG -->
-
-    <div class="category" id="ribbon-bag">
-
-      <div class="category-heading">
-        <h3>Satin Ribbon Bags</h3>
-        <div class="category-line"></div>
-      </div>
-
-      <div class="products">
-
-        <article class="product">
-          <div class="product-image">
-            <img src="images/satin-ribbon-bag.jpg" alt="Satin Ribbon Bag"
-                 onerror="this.style.display='none'">
-            <div class="photo-placeholder">Your Satin Ribbon Bag photo</div>
-          </div>
-          <div class="product-info">
-            <h4>Satin Ribbon Bag</h4>
-            <p>A handmade crochet-style satin ribbon bag with a pearl handle.</p>
-            <span class="price">Price depends on design</span>
-            <a class="order-small" href="https://www.instagram.com/wrapandwow5/" target="_blank">Order</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-  </section>
-
-
-  <!-- CUSTOM -->
-
-  <section class="custom" id="custom">
-
-    <div class="custom-box">
-
-      <h2>Make It Yours</h2>
-
-      <p>
-        Want something different? We create customised gifts according
-        to your preferred colours, quantity, occasion and style.
-      </p>
-
-      <a
-        class="button"
-        href="https://www.instagram.com/wrapandwow5/"
-        target="_blank"
-      >
-        Customise Your Gift
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- WHAT WE OFFER -->
-
-  <section>
-
-    <div class="section-title">
-      <h2>What We Offer</h2>
-      <p>Made with attention to the little details.</p>
-    </div>
-
-    <div class="services">
-
-      <div class="service">
-        <h3>Handmade</h3>
-        <p>Each piece is prepared with care rather than mass-produced.</p>
-      </div>
-
-      <div class="service">
-        <h3>Customisation</h3>
-        <p>Choose colours, quantities and details according to your occasion.</p>
-      </div>
-
-      <div class="service">
-        <h3>Gift Ready</h3>
-        <p>Beautifully prepared pieces made for gifting.</p>
-      </div>
-
-      <div class="service">
-        <h3>Delivery & Pickup</h3>
-        <p>Delivery and pickup service available in Sialkot.</p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ORDER -->
-
-  <section class="order" id="order">
-
-    <div class="order-box">
-
-      <h2>Ready to Order?</h2>
-
-      <p>
-        Send us a DM with the details of the gift you have in mind.
-      </p>
-
-      <div class="steps">
-        <div><strong>1.</strong> Tell us what you'd like.</div>
-        <div><strong>2.</strong> Share your preferred colours and quantity.</div>
-        <div><strong>3.</strong> Tell us the date you need it.</div>
-        <div><strong>4.</strong> We'll confirm the price and details.</div>
-      </div>
-
-      <a
-        class="button"
-        href="https://www.instagram.com/wrapandwow5/"
-        target="_blank"
-      >
-        Order on Instagram
-      </a>
-
-    </div>
-
-  </section>
+    <div id="catalogue"></div>
 
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-  <h3>Wrap and Wow 5</h3>
+    <h3>
+        Wrap & Wow 5
+    </h3>
 
-  <p>Handmade gifts • Wrapped with love</p>
+    <p>
+        Handmade gifts • Custom colours • Sialkot, Pakistan
+    </p>
 
-  <p>Sialkot, Pakistan</p>
+    <p>
+        Delivery & take away service available.
+    </p>
 
-  <div class="socials">
+    <div class="social-links">
 
-    <a
-      href="https://www.instagram.com/wrapandwow5/"
-      target="_blank"
-    >
-      Instagram
-    </a>
+        <a
+            href="https://www.instagram.com/wrapandwow5/"
+            target="_blank"
+        >
+            Instagram
+        </a>
 
-    <a
-      href="https://www.tiktok.com/@wrapandwow.5"
-      target="_blank"
-    >
-      TikTok
-    </a>
+        <a
+            href="https://www.tiktok.com/@wrapandwow.5"
+            target="_blank"
+        >
+            TikTok
+        </a>
 
-  </div>
+    </div>
 
 </footer>
 
+
+<script>
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+const INSTAGRAM =
+    "https://www.instagram.com/wrapandwow5/";
+
+
+/* =========================================================
+   COMPLETE PRODUCT CATALOGUE
+=========================================================
+
+   MULTIPLE PHOTOS:
+
+   To add more photos to ONE product later:
+
+   "photo1.jpg|photo2.jpg|photo3.jpg"
+
+   The website will automatically create the slider.
+========================================================= */
+
+const products = [
+
+    /* ================= RIBBON FLOWERS ================= */
+
+    {
+        category: "Ribbon Flowers & Bouquets",
+        name: "Glitter Flowers",
+        price: "Rs. 400",
+        images: "images/glitter-flower.jpg"
+    },
+
+    {
+        category: "Ribbon Flowers & Bouquets",
+        name: "Dahlia Ribbon Flowers",
+        price: "Rs. 350 each",
+        images: "images/IMG-20261002-WA0010.jpg|images/IMG-20260819-WA0022.jpg"
+    },
+
+    {
+        category: "Ribbon Flowers & Bouquets",
+        name: "Sunflower Ribbon Flower",
+        price: "Rs. 400",
+        images: "images/sunflower-ribbon-flower.jpg"
+    },
+
+    {
+        category: "Ribbon Flowers & Bouquets",
+        name: "Blossom Ribbon Flower",
+        price: "Rs. 350",
+        images: "images/blossom-ribbon-flower.jpg"
+    },
+
+    {
+        category: "Ribbon Flowers & Bouquets",
+        name: "Fur Flower",
+        price: "Rs. 250",
+        images: "images/fur-flower.jpg"
+    },
+
+    {
+        category: "Ribbon Flowers & Bouquets",
+        name: "Tulip Ribbon Flower",
+        price: "Rs. 350",
+        images: "images/tulip-ribbon-flower.jpg"
+    },
+
+    {
+        category: "Ribbon Flowers & Bouquets",
+        name: "Ribbon Vase Bunch",
+        price: "Price depends on quantity",
+        images: "images/vase-ribbon-bunch.jpg"
+    },
+
+
+    /* ================= GAJRAS ================= */
+
+    {
+        category: "Ribbon Gajras",
+        name: "Ribbon Gajra",
+        price: "Rs. 950 / pair",
+        images: "images/ribbon-gajra.jpg"
+    },
+
+    {
+        category: "Ribbon Gajras",
+        name: "Heavy Ribbon Gajry",
+        price: "Rs. 1,300 / pair",
+        images: "images/ribbon-gajra.jpg"
+    },
+
+
+    /* ================= BRACELETS ================= */
+
+    {
+        category: "Bracelets & Bands",
+        name: "Floral Bracelets",
+        price: "Rs. 400",
+        images: "images/bracelet.jpg"
+    },
+
+    {
+        category: "Bracelets & Bands",
+        name: "Floral Bands",
+        price: "Rs. 350",
+        images: "images/bracelet.jpg"
+    },
+
+
+    /* ================= HAIRPINS ================= */
+
+    {
+        category: "Hairpins & Accessories",
+        name: "Hairpins",
+        price: "Rs. 100",
+        images: "images/hairpins.jpg"
+    },
+
+
+    /* ================= GIFTS ================= */
+
+    {
+        category: "Gifts",
+        name: "Mini Gift Baskets",
+        price: "Rs. 2,000",
+        images: "images/mini-basket.jpg"
+    },
+
+    {
+        category: "Gifts",
+        name: "Eid Packs",
+        price: "Rs. 1,000",
+        images: "images/eid-pack.jpg"
+    },
+
+    {
+        category: "Gifts",
+        name: "Sorry Box",
+        price: "Rs. 1,800",
+        images: "images/sorry-box.jpg"
+    },
+
+    {
+        category: "Gifts",
+        name: "Surprise Box",
+        price: "Rs. 7,000",
+        images: "images/surprise-box.jpg"
+    },
+
+    {
+        category: "Gifts",
+        name: "Gift Boxes",
+        price: "Rs. 3,000",
+        images: "images/gift-box.jpg"
+    },
+
+    {
+        category: "Gifts",
+        name: "Birthday Magazine (Handwritten)",
+        price: "Rs. 500",
+        images: "images/birthday-magazine.jpg"
+    },
+
+    {
+        category: "Gifts",
+        name: "Handwritten Letter",
+        price: "Rs. 200",
+        images: "images/handwritten-letter.jpg"
+    },
+
+
+    /* ================= CHARMS ================= */
+
+    {
+        category: "Charms & Stickers",
+        name: "Bag Charms",
+        price: "Rs. 150",
+        images: "images/bag-charm.jpg"
+    },
+
+    {
+        category: "Charms & Stickers",
+        name: "Bow Charms",
+        price: "Rs. 100",
+        images: "images/bow-charm.jpg"
+    },
+
+    {
+        category: "Charms & Stickers",
+        name: "Mini Bouquet Keychain",
+        price: "Rs. 250",
+        images: "images/mini-bouquet-keychain.jpg"
+    },
+
+    {
+        category: "Charms & Stickers",
+        name: "Mini Sticker Packages",
+        price: "Rs. 50 for 2",
+        images: "images/sticker-pack.jpg"
+    },
+
+
+    /* ================= ACCESSORIES ================= */
+
+    {
+        category: "Accessories",
+        name: "Pearl Head Crown",
+        price: "Rs. 1,900",
+        images: "images/pearl-head-crown.jpg"
+    },
+
+
+    /* ================= GIFTS & BOUQUETS ================= */
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Flower Bouquet",
+        price: "Rs. 1,000",
+        images: "images/flower-bouquet.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Chocolate & Floral Bouquet",
+        price: "Rs. 3,000",
+        images: "images/chocolate-floral-bouquet.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Picture Bouquet",
+        price: "Rs. 2,500",
+        images: "images/picture-bouquet.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Occasional Bouquet",
+        price: "Rs. 6,000",
+        images: "images/occasional-bouquet.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Mini Chocolate Bouquet",
+        price: "Rs. 400",
+        images: "images/mini-chocolate-bouquet.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Chocolate Bouquet",
+        price: "Rs. 800",
+        images: "images/chocolate-bouquet.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Girly Bouquet",
+        price: "Rs. 9,000",
+        images: "images/girly-bouquet.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Brown Bouquet",
+        price: "Rs. 4,200",
+        images: "images/brown-bouquet.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Blue Bouquet",
+        price: "Rs. 3,600",
+        images: "images/blue-bouquet.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Pink Bouquet",
+        price: "Rs. 4,500",
+        images: "images/pink-bouquet.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Large Snack Bouquet",
+        price: "Rs. 2,000",
+        images: "images/snack-bouquet-large.jpg"
+    },
+
+    {
+        category: "Gifts & Bouquets",
+        name: "Small Snack Bouquet",
+        price: "Rs. 650",
+        images: "images/snack-bouquet-small.jpg"
+    },
+
+
+    /* ================= MONEY BOUQUETS ================= */
+
+    {
+        category: "Chocolate & Money Bouquets",
+        name: "Rs. 100 Notes Bouquet",
+        price: "Rs. 21,000",
+        images: "images/chocolate-money-bouquet.jpg"
+    },
+
+    {
+        category: "Chocolate & Money Bouquets",
+        name: "Rs. 50 Notes Bouquet",
+        price: "Rs. 14,000",
+        images: "images/chocolate-money-bouquet.jpg"
+    },
+
+
+    /* ================= ENGAGEMENT ================= */
+
+    {
+        category: "Engagement Favours",
+        name: "Engagement Favours",
+        price: "Rs. 90",
+        images: "images/engagement-favour.jpg"
+    },
+
+
+    /* ================= MITHAI ================= */
+
+    {
+        category: "Mithai Toppers",
+        name: "Mithai Toppers",
+        price: "Rs. 45",
+        images: "images/mithai-topper.jpg"
+    },
+
+
+    /* ================= CARDS ================= */
+
+    {
+        category: "Cards & Business Stationery",
+        name: "Business Cards",
+        price: "Customisable",
+        images: "images/business-card.jpg"
+    },
+
+    {
+        category: "Cards & Business Stationery",
+        name: "Business Stickers",
+        price: "Customisable",
+        images: "images/business-stickers.jpg"
+    },
+
+    {
+        category: "Cards & Business Stationery",
+        name: "Wedding Cards",
+        price: "Customisable",
+        images: "images/wedding-cards.jpg"
+    },
+
+    {
+        category: "Cards & Business Stationery",
+        name: "Eid Cards",
+        price: "Customisable",
+        images: "images/eid-cards.jpg"
+    },
+
+    {
+        category: "Cards & Business Stationery",
+        name: "Custom Cards",
+        price: "Any type • Customisable",
+        images: "images/custom-cards.jpg"
+    },
+
+
+    /* ================= SATIN BAGS ================= */
+
+    {
+        category: "Satin Ribbon Bags",
+        name: "Satin Ribbon Bags",
+        price: "Customisable",
+        images: "images/satin-ribbon-bag.jpg"
+    }
+
+];
+
+
+/* =========================================================
+   CATEGORY ORDER
+========================================================= */
+
+const categories = [
+    "Ribbon Flowers & Bouquets",
+    "Ribbon Gajras",
+    "Bracelets & Bands",
+    "Hairpins & Accessories",
+    "Gifts",
+    "Charms & Stickers",
+    "Accessories",
+    "Gifts & Bouquets",
+    "Chocolate & Money Bouquets",
+    "Engagement Favours",
+    "Mithai Toppers",
+    "Cards & Business Stationery",
+    "Satin Ribbon Bags"
+];
+
+
+/* =========================================================
+   CREATE CATEGORY NAVIGATION
+========================================================= */
+
+const categoryNav =
+    document.getElementById("categoryNav");
+
+const menu =
+    document.getElementById("menu");
+
+const catalogue =
+    document.getElementById("catalogue");
+
+
+categories.forEach(category => {
+
+    const id = makeId(category);
+
+    categoryNav.innerHTML += `
+        <a href="#${id}">
+            ${category}
+        </a>
+    `;
+
+    menu.innerHTML += `
+        <a
+            href="#${id}"
+            onclick="closeMenu()"
+        >
+            ${category}
+        </a>
+    `;
+
+});
+
+
+/* =========================================================
+   CREATE CATALOGUE
+========================================================= */
+
+categories.forEach(category => {
+
+    const productsInCategory =
+        products.filter(
+            product => product.category === category
+        );
+
+    const section =
+        document.createElement("section");
+
+    section.className = "section";
+
+    section.id = makeId(category);
+
+    section.innerHTML = `
+        <div class="section-heading">
+
+            <h2>
+                ${category}
+            </h2>
+
+            <p>
+                Handmade & customisable pieces
+            </p>
+
+        </div>
+
+        <div class="product-grid"></div>
+    `;
+
+    const grid =
+        section.querySelector(".product-grid");
+
+
+    productsInCategory.forEach(
+        (product, index) => {
+
+            grid.appendChild(
+                createProductCard(
+                    product,
+                    `${category}-${index}`
+                )
+            );
+
+        }
+    );
+
+
+    catalogue.appendChild(section);
+
+});
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+function createProductCard(product, uniqueId) {
+
+    const card =
+        document.createElement("article");
+
+    card.className =
+        "product-card";
+
+
+    const images =
+        product.images.split("|");
+
+
+    const imageBox =
+        document.createElement("div");
+
+    imageBox.className =
+        "product-image";
+
+    imageBox.dataset.index = "0";
+
+
+    function displayImage() {
+
+        const currentIndex =
+            Number(imageBox.dataset.index);
+
+        const currentImage =
+            images[currentIndex];
+
+
+        imageBox.innerHTML = `
+
+            <a
+                href="${currentImage}"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <img
+                    src="${currentImage}"
+                    alt="${product.name}"
+                    onerror="this.style.display='none';"
+                >
+
+            </a>
+
+        `;
+
+
+        if (images.length > 1) {
+
+            imageBox.innerHTML += `
+
+                <button
+                    class="slider-button slider-prev"
+                    onclick="changeSlide(event, this, -1)"
+                    aria-label="Previous photo"
+                >
+                    ‹
+                </button>
+
+                <button
+                    class="slider-button slider-next"
+                    onclick="changeSlide(event, this, 1)"
+                    aria-label="Next photo"
+                >
+                    ›
+                </button>
+
+                <div class="image-dots">
+
+                    ${images.map(
+                        (image, index) => `
+
+                        <span
+                            class="image-dot ${
+                                index === currentIndex
+                                ? "active"
+                                : ""
+                            }"
+                            onclick="selectSlide(
+                                event,
+                                this,
+                                ${index}
+                            )"
+                        ></span>
+
+                    `).join("")}
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+
+    displayImage();
+
+
+    card.appendChild(imageBox);
+
+
+    const info =
+        document.createElement("div");
+
+    info.className =
+        "product-info";
+
+
+    let description =
+        "Handmade piece available in your preferred custom colours.";
+
+
+    if (product.name === "Ribbon Vase Bunch") {
+
+        description =
+            "Price depends on quantity and design.";
+
+    }
+
+
+    if (
+        product.name === "Custom Cards"
+    ) {
+
+        description =
+            "Any type of card can be customised.";
+
+    }
+
+
+    info.innerHTML = `
+
+        <h3 class="product-name">
+            ${product.name}
+        </h3>
+
+        <div class="product-description">
+            ${description}
+        </div>
+
+        <div class="product-price">
+            ${product.price}
+        </div>
+
+        <div class="custom-colours">
+            Custom colours available
+        </div>
+
+        <a
+            class="order-button"
+            href="${INSTAGRAM}"
+            target="_blank"
+            rel="noopener"
+        >
+            Order on Instagram
+        </a>
+
+    `;
+
+
+    card.appendChild(info);
+
+
+    return card;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+function getProductFromCard(media) {
+
+    const card =
+        media.closest(".product-card");
+
+    const name =
+        card.querySelector(
+            ".product-name"
+        ).textContent.trim();
+
+
+    return products.find(
+        product => product.name === name
+    );
+}
+
+
+function changeSlide(event, button, direction) {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+
+    const media =
+        button.closest(".product-image");
+
+
+    const product =
+        getProductFromCard(media);
+
+
+    if (!product) return;
+
+
+    const images =
+        product.images.split("|");
+
+
+    let index =
+        Number(media.dataset.index);
+
+
+    index += direction;
+
+
+    if (index < 0) {
+
+        index =
+            images.length - 1;
+
+    }
+
+
+    if (index >= images.length) {
+
+        index = 0;
+
+    }
+
+
+    media.dataset.index =
+        index;
+
+
+    updateSlide(
+        media,
+        images,
+        index
+    );
+}
+
+
+function selectSlide(
+    event,
+    dot,
+    index
+) {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+
+    const media =
+        dot.closest(".product-image");
+
+
+    const product =
+        getProductFromCard(media);
+
+
+    if (!product) return;
+
+
+    const images =
+        product.images.split("|");
+
+
+    media.dataset.index =
+        index;
+
+
+    updateSlide(
+        media,
+        images,
+        index
+    );
+}
+
+
+function updateSlide(
+    media,
+    images,
+    index
+) {
+
+    const link =
+        media.querySelector("a");
+
+    const image =
+        media.querySelector("img");
+
+
+    link.href =
+        images[index];
+
+
+    image.src =
+        images[index];
+
+
+    const dots =
+        media.querySelectorAll(
+            ".image-dot"
+        );
+
+
+    dots.forEach(
+        (dot, dotIndex) => {
+
+            dot.classList.toggle(
+                "active",
+                dotIndex === index
+            );
+
+        }
+    );
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+function toggleMenu() {
+
+    document
+        .getElementById("menu")
+        .classList.toggle("open");
+
+}
+
+
+function closeMenu() {
+
+    document
+        .getElementById("menu")
+        .classList.remove("open");
+
+}
+
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            !event.target.closest(".header")
+        ) {
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   CREATE SAFE SECTION IDS
+========================================================= */
+
+function makeId(text) {
+
+    return text
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+
+}
+
+</script>
+
 </body>
-  </html>
+</html>
