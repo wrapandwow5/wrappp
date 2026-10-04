@@ -9,6 +9,7 @@
 <meta name="description" content="Wrap & Wow 5 - Handmade flowers, bouquets, gifts, accessories and customised creations.">
 
 <style>
+
 :root {
     --cream: #fbf5ee;
     --cream-dark: #f1e2d6;
@@ -42,7 +43,10 @@ a {
     color: inherit;
 }
 
-/* ================= MOVING ORDER NOTICE ================= */
+
+/* =========================================================
+   MOVING ORDER NOTICE
+========================================================= */
 
 .order-notice {
     width: 100%;
@@ -67,6 +71,7 @@ a {
 }
 
 @keyframes noticeMove {
+
     from {
         transform: translateX(0);
     }
@@ -74,27 +79,35 @@ a {
     to {
         transform: translateX(-100%);
     }
+
 }
 
-/* ================= HEADER ================= */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .header {
     position: sticky;
     top: 0;
     z-index: 1000;
+
     background: rgba(255, 253, 249, 0.97);
     backdrop-filter: blur(12px);
+
     border-bottom: 1px solid var(--border);
 }
 
 .header-inner {
     max-width: 1200px;
     margin: auto;
+
     padding: 10px 18px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 15px;
 }
 
@@ -107,8 +120,11 @@ a {
 .logo {
     width: 58px;
     height: 58px;
+
     object-fit: contain;
+
     border-radius: 50%;
+
     background: white;
 }
 
@@ -125,13 +141,18 @@ a {
 
 .brand-sub {
     margin-top: 4px;
+
     font-family: Arial, sans-serif;
     font-size: 9px;
     letter-spacing: 2px;
+
     color: var(--gold);
 }
 
-/* ================= SEARCH ================= */
+
+/* =========================================================
+   SEARCH
+========================================================= */
 
 .top-search {
     flex: 1;
@@ -141,9 +162,12 @@ a {
 
 .top-search input {
     width: 100%;
+
     padding: 11px 16px;
+
     border: 1px solid var(--border);
     border-radius: 25px;
+
     outline: none;
 
     background: var(--cream);
@@ -157,14 +181,21 @@ a {
     border-color: var(--rose);
 }
 
-/* ================= MENU ================= */
+
+/* =========================================================
+   MENU
+========================================================= */
 
 .menu-button {
     border: none;
     background: transparent;
+
     color: var(--rose-dark);
+
     font-size: 30px;
+
     cursor: pointer;
+
     padding: 5px 8px;
 }
 
@@ -172,18 +203,23 @@ a {
     display: none;
 
     position: absolute;
+
     right: 18px;
     top: 78px;
 
     width: min(370px, calc(100% - 36px));
+
     max-height: 78vh;
+
     overflow-y: auto;
 
     background: var(--white);
+
     border: 1px solid var(--border);
     border-radius: 18px;
 
     padding: 12px;
+
     box-shadow: var(--shadow);
 }
 
@@ -197,10 +233,12 @@ a {
 
 .menu-search input {
     width: 100%;
+
     padding: 11px 13px;
 
     border: 1px solid var(--border);
     border-radius: 20px;
+
     outline: none;
 
     background: var(--cream);
@@ -212,7 +250,9 @@ a {
 
 .menu a {
     display: block;
+
     padding: 13px;
+
     border-radius: 10px;
 
     font-family: Arial, sans-serif;
@@ -224,43 +264,60 @@ a {
     color: var(--rose-dark);
 }
 
-/* ================= HERO ================= */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
     max-width: 1200px;
     margin: auto;
+
     padding: 70px 20px 45px;
+
     text-align: center;
 }
 
 .hero-small {
     font-family: Arial, sans-serif;
+
     font-size: 11px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
     color: var(--gold);
 }
 
 .hero h1 {
     margin: 15px 0 10px;
+
     font-size: clamp(40px, 8vw, 68px);
+
     color: var(--rose-dark);
 }
 
 .hero p {
     max-width: 650px;
+
     margin: 0 auto 25px;
 
     color: var(--muted);
+
     font-size: 15px;
+
     line-height: 1.8;
 }
 
 .hero-buttons {
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     gap: 10px;
+
     flex-wrap: wrap;
 }
 
@@ -271,19 +328,26 @@ a {
     color: white;
 
     padding: 13px 22px;
+
     border-radius: 30px;
 
     font-family: Arial, sans-serif;
+
     font-size: 13px;
 }
 
 .hero-button.secondary {
     background: white;
+
     color: var(--rose-dark);
+
     border: 1px solid var(--border);
 }
 
-/* ================= CATEGORY NAV ================= */
+
+/* =========================================================
+   CATEGORY NAV
+========================================================= */
 
 .category-nav {
     max-width: 1200px;
@@ -292,9 +356,11 @@ a {
     padding: 0 18px 15px;
 
     display: flex;
+
     gap: 8px;
 
     overflow-x: auto;
+
     scrollbar-width: none;
 }
 
@@ -306,146 +372,211 @@ a {
     flex: 0 0 auto;
 
     background: white;
+
     border: 1px solid var(--border);
 
     padding: 9px 14px;
+
     border-radius: 25px;
 
     font-family: Arial, sans-serif;
+
     font-size: 11px;
 
     color: var(--rose-dark);
 }
 
-/* ================= SERVICE ================= */
+
+/* =========================================================
+   SERVICE
+========================================================= */
 
 .service-section {
     max-width: 1165px;
+
     margin: 20px auto 10px;
+
     padding: 0 18px;
 }
 
 .service-box {
     background: var(--white);
+
     border: 1px solid var(--border);
+
     border-radius: 20px;
+
     padding: 24px;
+
     text-align: center;
+
     box-shadow: 0 6px 22px rgba(82, 58, 49, 0.06);
 }
 
 .service-box h2 {
     margin: 0 0 8px;
+
     color: var(--rose-dark);
+
     font-size: 24px;
 }
 
 .service-box p {
     margin: 7px auto;
+
     max-width: 700px;
+
     color: var(--muted);
+
     font-family: Arial, sans-serif;
+
     font-size: 12px;
+
     line-height: 1.7;
 }
 
 .service-highlight {
     color: var(--rose-dark);
+
     font-weight: bold;
 }
 
-/* ================= ABOUT US ================= */
+
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .about-section {
     max-width: 1165px;
+
     margin: 25px auto 10px;
+
     padding: 0 18px;
 }
 
 .about-box {
     background: var(--white);
+
     border: 1px solid var(--border);
+
     border-radius: 20px;
+
     padding: 28px 24px;
+
     text-align: center;
+
     box-shadow: 0 6px 22px rgba(82, 58, 49, 0.06);
 }
 
 .about-box h2 {
     margin: 0 0 16px;
+
     color: var(--rose-dark);
+
     font-size: 26px;
 }
 
 .about-box p {
     max-width: 760px;
+
     margin: 9px auto;
+
     color: var(--muted);
+
     font-family: Arial, sans-serif;
+
     font-size: 12px;
+
     line-height: 1.8;
 }
 
 .about-highlight {
     color: var(--rose-dark) !important;
+
     font-weight: bold;
 }
 
-/* ================= SECTIONS ================= */
+
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 .section {
     max-width: 1200px;
+
     margin: auto;
+
     padding: 42px 18px 5px;
 }
 
 .section-heading {
     text-align: center;
+
     margin-bottom: 25px;
 }
 
 .section-heading h2 {
     margin: 0;
+
     color: var(--rose-dark);
+
     font-size: 28px;
 }
 
 .section-heading p {
     margin: 8px 0 0;
+
     color: var(--muted);
+
     font-size: 12px;
 }
 
-/* ================= PRODUCT GRID ================= */
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
     gap: 20px;
 }
 
-/* ================= PRODUCT CARD ================= */
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
 
 .product-card {
     background: var(--white);
 
     border: 1px solid var(--border);
+
     border-radius: 18px;
 
     overflow: hidden;
 
-    box-shadow: 0 6px 22px rgba(82, 58, 49, 0.07);
+    box-shadow:
+        0 6px 22px rgba(82, 58, 49, 0.07);
 
     display: flex;
+
     flex-direction: column;
 }
 
-/* ================= PRODUCT IMAGE ================= */
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
 
 .product-image {
     position: relative;
 
     width: 100%;
+
     aspect-ratio: 1 / 1;
 
     background: #f5ece5;
@@ -475,18 +606,23 @@ a {
     transform: scale(1.03);
 }
 
-/* ================= SLIDER ================= */
+
+/* =========================================================
+   SLIDER
+========================================================= */
 
 .slider-button {
     position: absolute;
 
     top: 50%;
+
     transform: translateY(-50%);
 
     width: 32px;
     height: 32px;
 
     border: none;
+
     border-radius: 50%;
 
     background: rgba(255,255,255,0.92);
@@ -496,6 +632,7 @@ a {
     font-size: 21px;
 
     cursor: pointer;
+
     z-index: 5;
 }
 
@@ -511,10 +648,12 @@ a {
     position: absolute;
 
     bottom: 8px;
+
     left: 0;
     right: 0;
 
     text-align: center;
+
     z-index: 5;
 }
 
@@ -537,12 +676,16 @@ a {
     background: var(--rose-dark);
 }
 
-/* ================= PRODUCT INFO ================= */
+
+/* =========================================================
+   PRODUCT INFO
+========================================================= */
 
 .product-info {
     padding: 15px;
 
     display: flex;
+
     flex-direction: column;
 
     flex: 1;
@@ -554,6 +697,7 @@ a {
     color: var(--brown);
 
     font-size: 17px;
+
     line-height: 1.4;
 
     min-height: 48px;
@@ -565,6 +709,7 @@ a {
     font-family: Arial, sans-serif;
 
     font-size: 11px;
+
     line-height: 1.55;
 
     min-height: 35px;
@@ -578,6 +723,7 @@ a {
     font-family: Arial, sans-serif;
 
     font-size: 13px;
+
     font-weight: bold;
 }
 
@@ -591,8 +737,14 @@ a {
     font-size: 10px;
 }
 
+
+/* =========================================================
+   ORDER BUTTON
+========================================================= */
+
 .order-button {
     display: block;
+
     width: 100%;
 
     margin-top: auto;
@@ -600,9 +752,11 @@ a {
     padding: 10px;
 
     background: var(--rose-dark);
+
     color: white;
 
     border: none;
+
     border-radius: 25px;
 
     text-align: center;
@@ -610,21 +764,32 @@ a {
     font-family: Arial, sans-serif;
 
     font-size: 11px;
+
     font-weight: bold;
 
     cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 .order-button:hover {
     background: #714149;
 }
 
-/* ================= NO RESULTS ================= */
+.order-button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
 
 .no-results {
     display: none;
 
     max-width: 700px;
+
     margin: 35px auto;
 
     padding: 25px;
@@ -634,14 +799,20 @@ a {
     color: var(--muted);
 
     background: var(--white);
+
     border: 1px solid var(--border);
+
     border-radius: 18px;
 
     font-family: Arial, sans-serif;
+
     font-size: 13px;
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
     margin-top: 65px;
@@ -657,6 +828,7 @@ footer {
 
 footer h3 {
     margin: 0 0 8px;
+
     color: var(--rose-dark);
 }
 
@@ -676,9 +848,11 @@ footer p {
     margin-top: 18px;
 
     display: flex;
+
     justify-content: center;
 
     gap: 10px;
+
     flex-wrap: wrap;
 }
 
@@ -696,17 +870,22 @@ footer p {
     border: 1px solid var(--border);
 }
 
-/* ================= MOBILE ================= */
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
 
     .order-notice {
         font-size: 10px;
+
         padding: 8px 0;
     }
 
     .header-inner {
         padding: 8px 12px;
+
         gap: 8px;
     }
 
@@ -759,7 +938,9 @@ footer p {
     }
 
     .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
         gap: 10px;
     }
 
@@ -769,11 +950,13 @@ footer p {
 
     .product-name {
         font-size: 14px;
+
         min-height: 42px;
     }
 
     .product-description {
         font-size: 9px;
+
         min-height: 32px;
     }
 
@@ -787,17 +970,23 @@ footer p {
 
     .order-button {
         padding: 9px 4px;
+
         font-size: 9px;
     }
 
     .menu {
         right: 10px;
+
         top: 68px;
+
         width: calc(100% - 20px);
     }
 }
 
-/* ================= VERY SMALL MOBILE ================= */
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
 
 @media (max-width: 380px) {
 
@@ -816,84 +1005,116 @@ footer p {
     .product-description {
         font-size: 8px;
     }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= MOVING ORDER NOTICE ================= -->
+
+<!-- =========================================================
+     MOVING ORDER NOTICE
+========================================================= -->
 
 <div class="order-notice">
+
     <div class="order-notice-text">
-        🎀 Please Note: Handmade Orders Take 4–5 Working Days • Sialkot Delivery Rs. 250 • Pickup Available 🎀
+
+        🎀 Please Note: Handmade Orders Take 4–5 Working Days
+        • Sialkot Delivery Rs. 250
+        • Pickup Available 🎀
+
     </div>
+
 </div>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header class="header">
 
-<div class="header-inner">
+    <div class="header-inner">
 
-    <a href="#top" class="brand">
+        <a href="#top" class="brand">
 
-        <img
-            src="images/logo.png"
-            alt="Wrap & Wow 5 Logo"
-            class="logo"
-        >
+            <img
+                src="images/logo.png"
+                alt="Wrap & Wow 5 Logo"
+                class="logo"
+            >
 
-        <span class="brand-text">
-            <span class="brand-name">Wrap & Wow 5</span>
-            <span class="brand-sub">HANDMADE WITH LOVE</span>
-        </span>
+            <span class="brand-text">
 
-    </a>
+                <span class="brand-name">
+                    Wrap & Wow 5
+                </span>
 
-    <div class="top-search">
-        <input
-            id="topSearch"
-            type="search"
-            placeholder="Search products..."
-            aria-label="Search products"
-        >
-    </div>
+                <span class="brand-sub">
+                    HANDMADE WITH LOVE
+                </span>
 
-    <button
-        class="menu-button"
-        type="button"
-        onclick="toggleMenu()"
-        aria-label="Open menu"
-    >
-        ☰
-    </button>
+            </span>
 
-    <nav id="menu" class="menu">
+        </a>
 
-        <div class="menu-search">
+
+        <div class="top-search">
+
             <input
-                id="menuSearch"
+                id="topSearch"
                 type="search"
                 placeholder="Search products..."
                 aria-label="Search products"
             >
+
         </div>
 
-    </nav>
 
-</div>
+        <button
+            class="menu-button"
+            type="button"
+            onclick="toggleMenu()"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+
+        <nav id="menu" class="menu">
+
+            <div class="menu-search">
+
+                <input
+                    id="menuSearch"
+                    type="search"
+                    placeholder="Search products..."
+                    aria-label="Search products"
+                >
+
+            </div>
+
+        </nav>
+
+    </div>
 
 </header>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =========================================================
+     MAIN
+========================================================= -->
 
 <main id="top">
 
 
-<!-- ================= HERO ================= -->
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero">
 
@@ -901,14 +1122,17 @@ footer p {
         Handmade • Custom • Thoughtful
     </div>
 
+
     <h1>
         Wrap & Wow 5
     </h1>
+
 
     <p>
         Handmade flowers, bouquets, gifts and beautiful little
         details made especially for your special moments.
     </p>
+
 
     <div class="hero-buttons">
 
@@ -920,6 +1144,7 @@ footer p {
         >
             Order on Instagram
         </a>
+
 
         <a
             class="hero-button secondary"
@@ -935,7 +1160,9 @@ footer p {
 </section>
 
 
-<!-- ================= CATEGORY NAVIGATION ================= -->
+<!-- =========================================================
+     CATEGORY NAVIGATION
+========================================================= -->
 
 <div
     id="categoryNav"
@@ -943,7 +1170,9 @@ footer p {
 ></div>
 
 
-<!-- ================= DELIVERY + PICKUP ================= -->
+<!-- =========================================================
+     DELIVERY + PICKUP
+========================================================= -->
 
 <section class="service-section">
 
@@ -953,18 +1182,22 @@ footer p {
             Delivery + Pickup Service
         </h2>
 
+
         <p>
             Delivery and take away service is available for
             Wrap & Wow 5 orders.
         </p>
 
+
         <p class="service-highlight">
             Sialkot delivery + pickup available.
         </p>
 
+
         <p>
             Delivery charges: Rs. 250
         </p>
+
 
         <p>
             For customised orders, please contact us through Instagram
@@ -976,9 +1209,14 @@ footer p {
 </section>
 
 
-<!-- ================= ABOUT US ================= -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
 
-<section class="about-section" id="about">
+<section
+    class="about-section"
+    id="about"
+>
 
     <div class="about-box">
 
@@ -986,17 +1224,27 @@ footer p {
             🎀 About Wrap & Wow
         </h2>
 
-        <p class="about-highlight">
-            Handmade with love, created to make every moment
-            a little more special. 🎀
-        </p>
 
         <p class="about-highlight">
+
+            Handmade with love, created to make every moment
+            a little more special. 🎀
+
+        </p>
+
+
+        <p class="about-highlight">
+
             📍 Sialkot, Pakistan
+
             <br>
+
             🚚 Delivery Rs. 250 • Pickup available
+
             <br>
+
             ⏰ 4–5 working days after order confirmation.
+
         </p>
 
     </div>
@@ -1004,9 +1252,12 @@ footer p {
 </section>
 
 
-<!-- ================= CATALOGUE ================= -->
+<!-- =========================================================
+     CATALOGUE
+========================================================= -->
 
 <div id="catalogue"></div>
+
 
 <div
     id="noResults"
@@ -1015,49 +1266,57 @@ footer p {
     No products found. Try another search.
 </div>
 
+
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
-<h3>
-    Wrap & Wow 5
-</h3>
+    <h3>
+        Wrap & Wow 5
+    </h3>
 
-<p>
-    Handmade gifts • Custom colours • Sialkot, Pakistan
-</p>
 
-<p>
-    Delivery & take away service available.
-</p>
+    <p>
+        Handmade gifts • Custom colours • Sialkot, Pakistan
+    </p>
 
-<div class="social-links">
 
-    <a
-        href="https://www.instagram.com/wrapandwow5/"
-        target="_blank"
-        rel="noopener"
-    >
-        Instagram: @wrapandwow5
-    </a>
+    <p>
+        Delivery & take away service available.
+    </p>
 
-    <a
-        href="https://www.tiktok.com/@wrapandwow.5"
-        target="_blank"
-        rel="noopener"
-    >
-        TikTok: @wrapandwow.5
-    </a>
 
-</div>
+    <div class="social-links">
+
+        <a
+            href="https://www.instagram.com/wrapandwow5/"
+            target="_blank"
+            rel="noopener"
+        >
+            Instagram: @wrapandwow5
+        </a>
+
+
+        <a
+            href="https://www.tiktok.com/@wrapandwow.5"
+            target="_blank"
+            rel="noopener"
+        >
+            TikTok: @wrapandwow.5
+        </a>
+
+    </div>
 
 </footer>
 
 
 <script>
+
 
 /* =========================================================
    INSTAGRAM
@@ -1126,6 +1385,7 @@ const products = [
         images: "images/vase-ribbon-bunch.jpg"
     },
 
+
     {
         category: "Ribbon Gajras",
         name: "Ribbon Gajra",
@@ -1139,6 +1399,7 @@ const products = [
         price: "Rs. 1,300 / pair",
         images: "images/ribbon-gajra.jpg"
     },
+
 
     {
         category: "Bracelets & Bands",
@@ -1154,12 +1415,14 @@ const products = [
         images: "images/bracelet.jpg"
     },
 
+
     {
         category: "Hairpins & Accessories",
         name: "Hairpins",
         price: "Rs. 100",
         images: "images/hairpins.jpg"
     },
+
 
     {
         category: "Gifts",
@@ -1217,6 +1480,7 @@ const products = [
         images: "images/handwritten-letter.jpg"
     },
 
+
     {
         category: "Charms & Stickers",
         name: "Bag Charms",
@@ -1245,12 +1509,14 @@ const products = [
         images: "images/sticker-pack.jpg"
     },
 
+
     {
         category: "Accessories",
         name: "Pearl Head Crown",
         price: "Rs. 1,900",
         images: "images/pearl-head-crown.jpg"
     },
+
 
     {
         category: "Gifts & Bouquets",
@@ -1336,6 +1602,7 @@ const products = [
         images: "images/snack-bouquet-small.jpg"
     },
 
+
     {
         category: "Chocolate & Money Bouquets",
         name: "Rs. 100 Notes Bouquet",
@@ -1350,6 +1617,7 @@ const products = [
         images: "images/chocolate-money-bouquet.jpg"
     },
 
+
     {
         category: "Engagement Favours",
         name: "Engagement Favours",
@@ -1357,12 +1625,14 @@ const products = [
         images: "images/engagement-favour.jpg"
     },
 
+
     {
         category: "Mithai Toppers",
         name: "Mithai Toppers",
         price: "Rs. 45",
         images: "images/mithai-topper.jpg"
     },
+
 
     {
         category: "Cards & Business Stationery",
@@ -1399,6 +1669,7 @@ const products = [
         images: "images/custom-cards.jpg"
     },
 
+
     {
         category: "Satin Ribbon Bags",
         name: "Lavender Small Pearl Satin Ribbon Bag",
@@ -1421,6 +1692,7 @@ const products = [
 ========================================================= */
 
 const categories = [
+
     "Ribbon Flowers & Bouquets",
     "Ribbon Gajras",
     "Bracelets & Bands",
@@ -1434,6 +1706,7 @@ const categories = [
     "Mithai Toppers",
     "Cards & Business Stationery",
     "Satin Ribbon Bags"
+
 ];
 
 
@@ -1466,32 +1739,46 @@ const menuSearch =
 
 categories.forEach(category => {
 
-    const id = makeId(category);
+    const id =
+        makeId(category);
+
 
     categoryNav.innerHTML += `
+
         <a href="#${id}">
             ${category}
         </a>
+
     `;
 
+
     menu.innerHTML += `
+
         <a
             href="#${id}"
             onclick="closeMenu()"
         >
             ${category}
         </a>
+
     `;
 
 });
 
 
-/* ABOUT US MENU LINK */
+/* =========================================================
+   ABOUT MENU LINK
+========================================================= */
 
 menu.innerHTML += `
-    <a href="#about" onclick="closeMenu()">
+
+    <a
+        href="#about"
+        onclick="closeMenu()"
+    >
         🎀 About Us
     </a>
+
 `;
 
 
@@ -1503,19 +1790,29 @@ categories.forEach(category => {
 
     const productsInCategory =
         products.filter(
-            product => product.category === category
+            product =>
+                product.category === category
         );
+
 
     const section =
         document.createElement("section");
 
-    section.className = "section";
 
-    section.id = makeId(category);
+    section.className =
+        "section";
 
-    section.dataset.category = category;
+
+    section.id =
+        makeId(category);
+
+
+    section.dataset.category =
+        category;
+
 
     section.innerHTML = `
+
         <div class="section-heading">
 
             <h2>
@@ -1528,11 +1825,16 @@ categories.forEach(category => {
 
         </div>
 
+
         <div class="product-grid"></div>
+
     `;
 
+
     const grid =
-        section.querySelector(".product-grid");
+        section.querySelector(
+            ".product-grid"
+        );
 
 
     productsInCategory.forEach(
@@ -1549,7 +1851,9 @@ categories.forEach(category => {
     );
 
 
-    catalogue.appendChild(section);
+    catalogue.appendChild(
+        section
+    );
 
 });
 
@@ -1558,13 +1862,20 @@ categories.forEach(category => {
    PRODUCT CARD
 ========================================================= */
 
-function createProductCard(product, uniqueId) {
+function createProductCard(
+    product,
+    uniqueId
+) {
 
     const card =
-        document.createElement("article");
+        document.createElement(
+            "article"
+        );
+
 
     card.className =
         "product-card";
+
 
     card.dataset.productName =
         product.name.toLowerCase();
@@ -1575,18 +1886,26 @@ function createProductCard(product, uniqueId) {
 
 
     const imageBox =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     imageBox.className =
         "product-image";
 
-    imageBox.dataset.index = "0";
+
+    imageBox.dataset.index =
+        "0";
 
 
     function displayImage() {
 
         const currentIndex =
-            Number(imageBox.dataset.index);
+            Number(
+                imageBox.dataset.index
+            );
+
 
         const currentImage =
             images[currentIndex];
@@ -1624,6 +1943,7 @@ function createProductCard(product, uniqueId) {
                     ‹
                 </button>
 
+
                 <button
                     type="button"
                     class="slider-button slider-next"
@@ -1633,25 +1953,29 @@ function createProductCard(product, uniqueId) {
                     ›
                 </button>
 
+
                 <div class="image-dots">
 
                     ${images.map(
                         (image, index) => `
 
-                        <span
-                            class="image-dot ${
-                                index === currentIndex
-                                ? "active"
-                                : ""
-                            }"
-                            onclick="selectSlide(
-                                event,
-                                this,
-                                ${index}
-                            )"
-                        ></span>
+                            <span
+                                class="image-dot ${
+                                    index === currentIndex
+                                    ? "active"
+                                    : ""
+                                }"
+                                onclick="
+                                    selectSlide(
+                                        event,
+                                        this,
+                                        ${index}
+                                    )
+                                "
+                            ></span>
 
-                    `).join("")}
+                        `
+                    ).join("")}
 
                 </div>
 
@@ -1664,11 +1988,17 @@ function createProductCard(product, uniqueId) {
 
     displayImage();
 
-    card.appendChild(imageBox);
+
+    card.appendChild(
+        imageBox
+    );
 
 
     const info =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     info.className =
         "product-info";
@@ -1678,7 +2008,10 @@ function createProductCard(product, uniqueId) {
         "Handmade piece available in your preferred custom colours.";
 
 
-    if (product.name === "Ribbon Vase Bunch") {
+    if (
+        product.name ===
+        "Ribbon Vase Bunch"
+    ) {
 
         description =
             "Price depends on quantity and design.";
@@ -1686,7 +2019,10 @@ function createProductCard(product, uniqueId) {
     }
 
 
-    if (product.name === "Custom Cards") {
+    if (
+        product.name ===
+        "Custom Cards"
+    ) {
 
         description =
             "Any type of card can be customised.";
@@ -1694,7 +2030,10 @@ function createProductCard(product, uniqueId) {
     }
 
 
-    if (product.name === "Chocolate Box") {
+    if (
+        product.name ===
+        "Chocolate Box"
+    ) {
 
         description =
             "A beautiful handmade chocolate gift box.";
@@ -1703,7 +2042,8 @@ function createProductCard(product, uniqueId) {
 
 
     if (
-        product.name === "Lavender Small Pearl Satin Ribbon Bag"
+        product.name ===
+        "Lavender Small Pearl Satin Ribbon Bag"
     ) {
 
         description =
@@ -1713,7 +2053,8 @@ function createProductCard(product, uniqueId) {
 
 
     if (
-        product.name === "Black Satin Ribbon Bag with Charm"
+        product.name ===
+        "Black Satin Ribbon Bag with Charm"
     ) {
 
         description =
@@ -1729,6 +2070,7 @@ function createProductCard(product, uniqueId) {
     const message =
         `Hi! I'd like to order the ${product.name} (${product.price}). Please let me know the available options and order details.`;
 
+
     const safeMessage =
         JSON.stringify(message);
 
@@ -1739,17 +2081,21 @@ function createProductCard(product, uniqueId) {
             ${product.name}
         </h3>
 
+
         <div class="product-description">
             ${description}
         </div>
+
 
         <div class="product-price">
             ${product.price}
         </div>
 
+
         <div class="custom-colours">
             Custom colours available
         </div>
+
 
         <button
             class="order-button"
@@ -1762,27 +2108,38 @@ function createProductCard(product, uniqueId) {
     `;
 
 
-    card.appendChild(info);
+    card.appendChild(
+        info
+    );
+
 
     return card;
+
 }
 
 
 /* =========================================================
-   ORDER ON INSTAGRAM
+   ORDER ON INSTAGRAM — FIXED
 ========================================================= */
 
 function orderOnInstagram(message) {
 
-    let copied = false;
+    /*
+       First try to copy the exact product
+       order message.
+    */
 
     try {
 
         const textarea =
-            document.createElement("textarea");
+            document.createElement(
+                "textarea"
+            );
+
 
         textarea.value =
             message;
+
 
         textarea.style.position =
             "fixed";
@@ -1796,16 +2153,21 @@ function orderOnInstagram(message) {
         textarea.style.opacity =
             "0";
 
+
         document.body.appendChild(
             textarea
         );
+
 
         textarea.focus();
 
         textarea.select();
 
-        copied =
-            document.execCommand("copy");
+
+        document.execCommand(
+            "copy"
+        );
+
 
         document.body.removeChild(
             textarea
@@ -1813,33 +2175,23 @@ function orderOnInstagram(message) {
 
     } catch (error) {
 
-        copied = false;
+        /*
+           If copying fails,
+           Instagram still opens.
+        */
 
     }
 
 
-    if (copied) {
+    /*
+       Open the Wrap & Wow 5
+       Instagram inbox.
+    */
 
-        alert(
-            "Order message copied! Paste it in the Instagram chat and send it. 💌"
-        );
-
-    } else {
-
-        alert(
-            "Please copy the order message below and send it on Instagram:\n\n" +
-            message
-        );
-
-    }
-
-
-    setTimeout(function() {
-
-        window.location.href =
-            INSTAGRAM_DM;
-
-    }, 300);
+    window.open(
+        "https://ig.me/m/wrapandwow5",
+        "_blank"
+    );
 
 }
 
@@ -1848,20 +2200,29 @@ function orderOnInstagram(message) {
    LIVE SEARCH
 ========================================================= */
 
-function filterProducts(searchTerm) {
+function filterProducts(
+    searchTerm
+) {
 
     const term =
-        searchTerm.trim().toLowerCase();
+        searchTerm
+            .trim()
+            .toLowerCase();
 
-    let visibleProducts = 0;
+
+    let visibleProducts =
+        0;
 
 
     document
-        .querySelectorAll(".product-card")
+        .querySelectorAll(
+            ".product-card"
+        )
         .forEach(card => {
 
             const productName =
                 card.dataset.productName;
+
 
             const category =
                 card
@@ -1869,46 +2230,72 @@ function filterProducts(searchTerm) {
                     .dataset.category
                     .toLowerCase();
 
+
             const matches =
                 !term ||
                 productName.includes(term) ||
                 category.includes(term);
 
+
             card.style.display =
-                matches ? "flex" : "none";
+                matches
+                ? "flex"
+                : "none";
+
 
             if (matches) {
+
                 visibleProducts++;
+
             }
 
         });
 
 
     document
-        .querySelectorAll(".section")
+        .querySelectorAll(
+            ".section"
+        )
         .forEach(section => {
 
             const cards =
-                section.querySelectorAll(".product-card");
+                section.querySelectorAll(
+                    ".product-card"
+                );
 
-            let sectionHasVisibleCard = false;
+
+            let sectionHasVisibleCard =
+                false;
+
 
             cards.forEach(card => {
 
-                if (card.style.display !== "none") {
-                    sectionHasVisibleCard = true;
+                if (
+                    card.style.display !==
+                    "none"
+                ) {
+
+                    sectionHasVisibleCard =
+                        true;
+
                 }
 
             });
 
+
             section.style.display =
-                sectionHasVisibleCard ? "block" : "none";
+                sectionHasVisibleCard
+                ? "block"
+                : "none";
 
         });
 
 
     noResults.style.display =
-        visibleProducts === 0 ? "block" : "none";
+        visibleProducts === 0
+        ? "block"
+        : "none";
+
 }
 
 
@@ -1923,7 +2310,10 @@ topSearch.addEventListener(
         menuSearch.value =
             this.value;
 
-        filterProducts(this.value);
+
+        filterProducts(
+            this.value
+        );
 
     }
 );
@@ -1936,7 +2326,10 @@ menuSearch.addEventListener(
         topSearch.value =
             this.value;
 
-        filterProducts(this.value);
+
+        filterProducts(
+            this.value
+        );
 
     }
 );
@@ -1946,20 +2339,30 @@ menuSearch.addEventListener(
    SLIDER
 ========================================================= */
 
-function getProductFromCard(media) {
+function getProductFromCard(
+    media
+) {
 
     const card =
-        media.closest(".product-card");
+        media.closest(
+            ".product-card"
+        );
+
 
     const name =
-        card.querySelector(
-            ".product-name"
-        ).textContent.trim();
+        card
+            .querySelector(
+                ".product-name"
+            )
+            .textContent
+            .trim();
 
 
     return products.find(
-        product => product.name === name
+        product =>
+            product.name === name
     );
+
 }
 
 
@@ -1970,15 +2373,20 @@ function changeSlide(
 ) {
 
     event.preventDefault();
+
     event.stopPropagation();
 
 
     const media =
-        button.closest(".product-image");
+        button.closest(
+            ".product-image"
+        );
 
 
     const product =
-        getProductFromCard(media);
+        getProductFromCard(
+            media
+        );
 
 
     if (!product) return;
@@ -1989,19 +2397,28 @@ function changeSlide(
 
 
     let index =
-        Number(media.dataset.index);
+        Number(
+            media.dataset.index
+        );
 
 
     index += direction;
 
 
     if (index < 0) {
-        index = images.length - 1;
+
+        index =
+            images.length - 1;
+
     }
 
 
-    if (index >= images.length) {
+    if (
+        index >= images.length
+    ) {
+
         index = 0;
+
     }
 
 
@@ -2014,6 +2431,7 @@ function changeSlide(
         images,
         index
     );
+
 }
 
 
@@ -2024,15 +2442,20 @@ function selectSlide(
 ) {
 
     event.preventDefault();
+
     event.stopPropagation();
 
 
     const media =
-        dot.closest(".product-image");
+        dot.closest(
+            ".product-image"
+        );
 
 
     const product =
-        getProductFromCard(media);
+        getProductFromCard(
+            media
+        );
 
 
     if (!product) return;
@@ -2051,6 +2474,7 @@ function selectSlide(
         images,
         index
     );
+
 }
 
 
@@ -2061,10 +2485,15 @@ function updateSlide(
 ) {
 
     const link =
-        media.querySelector("a");
+        media.querySelector(
+            "a"
+        );
+
 
     const image =
-        media.querySelector("img");
+        media.querySelector(
+            "img"
+        );
 
 
     link.href =
@@ -2091,6 +2520,7 @@ function updateSlide(
 
         }
     );
+
 }
 
 
@@ -2102,7 +2532,9 @@ function toggleMenu() {
 
     document
         .getElementById("menu")
-        .classList.toggle("open");
+        .classList.toggle(
+            "open"
+        );
 
 }
 
@@ -2111,7 +2543,9 @@ function closeMenu() {
 
     document
         .getElementById("menu")
-        .classList.remove("open");
+        .classList.remove(
+            "open"
+        );
 
 }
 
@@ -2121,7 +2555,9 @@ document.addEventListener(
     function(event) {
 
         if (
-            !event.target.closest(".header")
+            !event.target.closest(
+                ".header"
+            )
         ) {
 
             closeMenu();
@@ -2139,9 +2575,18 @@ document.addEventListener(
 function makeId(text) {
 
     return text
+
         .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "");
+
+        .replace(
+            /[^a-z0-9]+/g,
+            "-"
+        )
+
+        .replace(
+            /^-|-$/g,
+            ""
+        );
 
 }
 
