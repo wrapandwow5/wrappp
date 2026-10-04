@@ -573,6 +573,7 @@ a {
 
 .order-button {
     display: block;
+    width: 100%;
 
     margin-top: auto;
 
@@ -581,6 +582,7 @@ a {
     background: var(--rose-dark);
     color: white;
 
+    border: none;
     border-radius: 25px;
 
     text-align: center;
@@ -589,6 +591,8 @@ a {
 
     font-size: 11px;
     font-weight: bold;
+
+    cursor: pointer;
 }
 
 .order-button:hover {
@@ -956,50 +960,20 @@ footer p {
     <div class="about-box">
 
         <h2>
-            🎀 About Wrap & Wow 5 🎀
+            🎀 About Wrap & Wow
         </h2>
 
-        <p>
-            ✨ Welcome to Wrap & Wow 5 — a little handmade gifting
-            space created with lots of love, creativity & care. 💕
-        </p>
-
-        <p>
-            🎁 We create thoughtfully wrapped gifts, ribbon flowers,
-            bouquets, accessories, stationery & customised gift pieces,
-            made to make your special moments a little more magical. 🌷✨
-        </p>
-
-        <p>
-            🧵 Every order is handmade with care, and custom colours
-            & details are available on many of our products. 🎀
-        </p>
-
-        <p>
-            💝 Whether it's a birthday surprise, a thoughtful gift
-            for someone special, or simply a little something to
-            brighten someone's day — we're here to help you
-            wrap it with love. 🌸
+        <p class="about-highlight">
+            Handmade with love, created to make every moment
+            a little more special. 🎀
         </p>
 
         <p class="about-highlight">
-            📍 Based in Sialkot, Pakistan 🇵🇰
-        </p>
-
-        <p class="about-highlight">
-            🚚 Sialkot Delivery — Rs. 250
+            📍 Sialkot, Pakistan
             <br>
-            📦 Pickup Available in Sialkot
-        </p>
-
-        <p class="about-highlight">
-            ⏰ Estimated delivery: 4–5 working days after
-            order confirmation.
-        </p>
-
-        <p>
-            🌷 Made by hand. Wrapped with love.
-            Created to make someone smile. 💗🎀
+            🚚 Delivery Rs. 250 • Pickup available
+            <br>
+            ⏰ 4–5 working days after order confirmation.
         </p>
 
     </div>
@@ -1079,6 +1053,8 @@ const INSTAGRAM_DM =
 
 const products = [
 
+    /* ================= RIBBON FLOWERS ================= */
+
     {
         category: "Ribbon Flowers & Bouquets",
         name: "Glitter Flowers",
@@ -1129,6 +1105,9 @@ const products = [
         images: "images/vase-ribbon-bunch.jpg"
     },
 
+
+    /* ================= GAJRAS ================= */
+
     {
         category: "Ribbon Gajras",
         name: "Ribbon Gajra",
@@ -1142,6 +1121,9 @@ const products = [
         price: "Rs. 1,300 / pair",
         images: "images/ribbon-gajra.jpg"
     },
+
+
+    /* ================= BRACELETS ================= */
 
     {
         category: "Bracelets & Bands",
@@ -1157,12 +1139,18 @@ const products = [
         images: "images/bracelet.jpg"
     },
 
+
+    /* ================= HAIRPINS ================= */
+
     {
         category: "Hairpins & Accessories",
         name: "Hairpins",
         price: "Rs. 100",
         images: "images/hairpins.jpg"
     },
+
+
+    /* ================= GIFTS ================= */
 
     {
         category: "Gifts",
@@ -1220,6 +1208,9 @@ const products = [
         images: "images/handwritten-letter.jpg"
     },
 
+
+    /* ================= CHARMS ================= */
+
     {
         category: "Charms & Stickers",
         name: "Bag Charms",
@@ -1248,12 +1239,18 @@ const products = [
         images: "images/sticker-pack.jpg"
     },
 
+
+    /* ================= ACCESSORIES ================= */
+
     {
         category: "Accessories",
         name: "Pearl Head Crown",
         price: "Rs. 1,900",
         images: "images/pearl-head-crown.jpg"
     },
+
+
+    /* ================= GIFTS & BOUQUETS ================= */
 
     {
         category: "Gifts & Bouquets",
@@ -1339,6 +1336,9 @@ const products = [
         images: "images/snack-bouquet-small.jpg"
     },
 
+
+    /* ================= MONEY BOUQUETS ================= */
+
     {
         category: "Chocolate & Money Bouquets",
         name: "Rs. 100 Notes Bouquet",
@@ -1353,6 +1353,9 @@ const products = [
         images: "images/chocolate-money-bouquet.jpg"
     },
 
+
+    /* ================= ENGAGEMENT ================= */
+
     {
         category: "Engagement Favours",
         name: "Engagement Favours",
@@ -1360,12 +1363,18 @@ const products = [
         images: "images/engagement-favour.jpg"
     },
 
+
+    /* ================= MITHAI ================= */
+
     {
         category: "Mithai Toppers",
         name: "Mithai Toppers",
         price: "Rs. 45",
         images: "images/mithai-topper.jpg"
     },
+
+
+    /* ================= CARDS ================= */
 
     {
         category: "Cards & Business Stationery",
@@ -1401,6 +1410,9 @@ const products = [
         price: "Any type • Customisable",
         images: "images/custom-cards.jpg"
     },
+
+
+    /* ================= SATIN RIBBON BAGS ================= */
 
     {
         category: "Satin Ribbon Bags",
@@ -1723,13 +1735,15 @@ function createProductCard(product, uniqueId) {
     }
 
 
-    /* ================= INSTAGRAM MESSAGE ================= */
+    /* =====================================================
+       PRODUCT ORDER MESSAGE
+    ===================================================== */
 
     const message =
         `Hi! I'd like to order the ${product.name} (${product.price}). Please let me know the available options and order details.`;
 
-    const instagramOrderLink =
-        `${INSTAGRAM_DM}?text=${encodeURIComponent(message)}`;
+    const safeMessage =
+        JSON.stringify(message);
 
 
     info.innerHTML = `
@@ -1750,14 +1764,13 @@ function createProductCard(product, uniqueId) {
             Custom colours available
         </div>
 
-        <a
+        <button
             class="order-button"
-            href="${instagramOrderLink}"
-            target="_blank"
-            rel="noopener"
+            type="button"
+            onclick='orderOnInstagram(${safeMessage})'
         >
             💌 Order This Item
-        </a>
+        </button>
 
     `;
 
@@ -1765,6 +1778,62 @@ function createProductCard(product, uniqueId) {
     card.appendChild(info);
 
     return card;
+}
+
+
+/* =========================================================
+   ORDER ON INSTAGRAM
+========================================================= */
+
+async function orderOnInstagram(message) {
+
+    try {
+
+        await navigator.clipboard.writeText(message);
+
+        alert(
+            "Your order message has been copied. Paste it in Instagram and send it. 💌"
+        );
+
+    } catch (error) {
+
+        const textarea =
+            document.createElement("textarea");
+
+        textarea.value =
+            message;
+
+        textarea.style.position =
+            "fixed";
+
+        textarea.style.opacity =
+            "0";
+
+        document.body.appendChild(
+            textarea
+        );
+
+        textarea.focus();
+
+        textarea.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+        document.body.removeChild(
+            textarea
+        );
+
+        alert(
+            "Your order message has been copied. Paste it in Instagram and send it. 💌"
+        );
+
+    }
+
+
+    window.location.href =
+        INSTAGRAM_DM;
 }
 
 
@@ -2072,4 +2141,4 @@ function makeId(text) {
 </script>
 
 </body>
-        </html>
+</html>
