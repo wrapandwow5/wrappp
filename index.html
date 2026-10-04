@@ -42,6 +42,20 @@ a {
     color: inherit;
 }
 
+/* ================= ORDER TIME ANNOUNCEMENT ================= */
+
+.order-notice {
+    width: 100%;
+    background: var(--rose-dark);
+    color: white;
+    text-align: center;
+    padding: 9px 15px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+}
+
 /* ================= HEADER ================= */
 
 .header {
@@ -317,6 +331,43 @@ a {
 
 .service-highlight {
     color: var(--rose-dark);
+    font-weight: bold;
+}
+
+/* ================= ABOUT US ================= */
+
+.about-section {
+    max-width: 1165px;
+    margin: 25px auto 10px;
+    padding: 0 18px;
+}
+
+.about-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 6px 22px rgba(82, 58, 49, 0.06);
+}
+
+.about-box h2 {
+    margin: 0 0 16px;
+    color: var(--rose-dark);
+    font-size: 26px;
+}
+
+.about-box p {
+    max-width: 760px;
+    margin: 9px auto;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.about-highlight {
+    color: var(--rose-dark) !important;
     font-weight: bold;
 }
 
@@ -625,6 +676,11 @@ footer p {
 
 @media (max-width: 700px) {
 
+    .order-notice {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
     .header-inner {
         padding: 8px 12px;
         gap: 8px;
@@ -663,11 +719,13 @@ footer p {
         width: min(300px, 100%);
     }
 
-    .service-section {
+    .service-section,
+    .about-section {
         padding: 0 10px;
     }
 
-    .service-box {
+    .service-box,
+    .about-box {
         padding: 20px 15px;
     }
 
@@ -740,6 +798,13 @@ footer p {
 
 <body>
 
+<!-- ================= ORDER TIME NOTICE ================= -->
+
+<div class="order-notice">
+    🎀 Please Note: Handmade Orders Take 4–5 Working Days 🎀
+</div>
+
+
 <!-- ================= HEADER ================= -->
 
 <header class="header">
@@ -748,7 +813,6 @@ footer p {
 
     <a href="#top" class="brand">
 
-        <!-- EXACT LOGO FILE -->
         <img
             src="images/logo.png"
             alt="Wrap & Wow 5 Logo"
@@ -802,6 +866,7 @@ footer p {
 <!-- ================= MAIN ================= -->
 
 <main id="top">
+
 
 <!-- ================= HERO ================= -->
 
@@ -873,8 +938,70 @@ footer p {
         </p>
 
         <p>
+            Delivery charges: Rs. 250
+        </p>
+
+        <p>
             For customised orders, please contact us through Instagram
             with your preferred colours, quantity and required date.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT US ================= -->
+
+<section class="about-section" id="about">
+
+    <div class="about-box">
+
+        <h2>
+            🎀 About Wrap & Wow 5 🎀
+        </h2>
+
+        <p>
+            ✨ Welcome to Wrap & Wow 5 — a little handmade gifting
+            space created with lots of love, creativity & care. 💕
+        </p>
+
+        <p>
+            🎁 We create thoughtfully wrapped gifts, ribbon flowers,
+            bouquets, accessories, stationery & customised gift pieces,
+            made to make your special moments a little more magical. 🌷✨
+        </p>
+
+        <p>
+            🧵 Every order is handmade with care, and custom colours
+            & details are available on many of our products. 🎀
+        </p>
+
+        <p>
+            💝 Whether it's a birthday surprise, a thoughtful gift
+            for someone special, or simply a little something to
+            brighten someone's day — we're here to help you
+            wrap it with love. 🌸
+        </p>
+
+        <p class="about-highlight">
+            📍 Based in Sialkot, Pakistan 🇵🇰
+        </p>
+
+        <p class="about-highlight">
+            🚚 Sialkot Delivery — Rs. 250
+            <br>
+            📦 Pickup Available in Sialkot
+        </p>
+
+        <p class="about-highlight">
+            ⏰ Estimated delivery: 4–5 working days after
+            order confirmation.
+        </p>
+
+        <p>
+            🌷 Made by hand. Wrapped with love.
+            Created to make someone smile. 💗🎀
         </p>
 
     </div>
@@ -964,8 +1091,6 @@ const products = [
         category: "Ribbon Flowers & Bouquets",
         name: "Dahlia Ribbon Flowers",
         price: "Rs. 350 each",
-
-        /* DAHLIA PHOTOS RESTORED */
         images:
             "images/IMG-20261002-WA0010.jpg|images/IMG-20260819-WA0022.jpg"
     },
@@ -1400,6 +1525,15 @@ categories.forEach(category => {
     `;
 
 });
+
+
+/* ABOUT US MENU LINK */
+
+menu.innerHTML += `
+    <a href="#about" onclick="closeMenu()">
+        🎀 About Us
+    </a>
+`;
 
 
 /* =========================================================
@@ -1972,4 +2106,4 @@ function makeId(text) {
 </script>
 
 </body>
-</html>
+    </html>
