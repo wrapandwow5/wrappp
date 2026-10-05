@@ -54,24 +54,20 @@ a {
     color: white;
     overflow: hidden;
     white-space: nowrap;
-
     font-family: Arial, sans-serif;
     font-size: 11px;
     letter-spacing: 0.3px;
     line-height: 1.5;
-
     padding: 9px 0;
 }
 
 .order-notice-text {
     display: inline-block;
     padding-left: 100%;
-
     animation: noticeMove 14s linear infinite;
 }
 
 @keyframes noticeMove {
-
     from {
         transform: translateX(0);
     }
@@ -79,7 +75,6 @@ a {
     to {
         transform: translateX(-100%);
     }
-
 }
 
 
@@ -91,23 +86,18 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     background: rgba(255, 253, 249, 0.97);
     backdrop-filter: blur(12px);
-
     border-bottom: 1px solid var(--border);
 }
 
 .header-inner {
     max-width: 1200px;
     margin: auto;
-
     padding: 10px 18px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 15px;
 }
 
@@ -120,11 +110,8 @@ a {
 .logo {
     width: 58px;
     height: 58px;
-
     object-fit: contain;
-
     border-radius: 50%;
-
     background: white;
 }
 
@@ -141,11 +128,9 @@ a {
 
 .brand-sub {
     margin-top: 4px;
-
     font-family: Arial, sans-serif;
     font-size: 9px;
     letter-spacing: 2px;
-
     color: var(--gold);
 }
 
@@ -162,17 +147,12 @@ a {
 
 .top-search input {
     width: 100%;
-
     padding: 11px 16px;
-
     border: 1px solid var(--border);
     border-radius: 25px;
-
     outline: none;
-
     background: var(--cream);
     color: var(--brown);
-
     font-family: Arial, sans-serif;
     font-size: 12px;
 }
@@ -189,37 +169,24 @@ a {
 .menu-button {
     border: none;
     background: transparent;
-
     color: var(--rose-dark);
-
     font-size: 30px;
-
     cursor: pointer;
-
     padding: 5px 8px;
 }
 
 .menu {
     display: none;
-
     position: absolute;
-
     right: 18px;
     top: 78px;
-
     width: min(370px, calc(100% - 36px));
-
     max-height: 78vh;
-
     overflow-y: auto;
-
     background: var(--white);
-
     border: 1px solid var(--border);
     border-radius: 18px;
-
     padding: 12px;
-
     box-shadow: var(--shadow);
 }
 
@@ -233,28 +200,20 @@ a {
 
 .menu-search input {
     width: 100%;
-
     padding: 11px 13px;
-
     border: 1px solid var(--border);
     border-radius: 20px;
-
     outline: none;
-
     background: var(--cream);
     color: var(--brown);
-
     font-family: Arial, sans-serif;
     font-size: 12px;
 }
 
 .menu a {
     display: block;
-
     padding: 13px;
-
     border-radius: 10px;
-
     font-family: Arial, sans-serif;
     font-size: 13px;
 }
@@ -272,75 +231,53 @@ a {
 .hero {
     max-width: 1200px;
     margin: auto;
-
     padding: 70px 20px 45px;
-
     text-align: center;
 }
 
 .hero-small {
     font-family: Arial, sans-serif;
-
     font-size: 11px;
-
     letter-spacing: 3px;
-
     text-transform: uppercase;
-
     color: var(--gold);
 }
 
 .hero h1 {
     margin: 15px 0 10px;
-
     font-size: clamp(40px, 8vw, 68px);
-
     color: var(--rose-dark);
 }
 
 .hero p {
     max-width: 650px;
-
     margin: 0 auto 25px;
-
     color: var(--muted);
-
     font-size: 15px;
-
     line-height: 1.8;
 }
 
 .hero-buttons {
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     gap: 10px;
-
     flex-wrap: wrap;
 }
 
 .hero-button {
     display: inline-block;
-
     background: var(--rose-dark);
     color: white;
-
     padding: 13px 22px;
-
     border-radius: 30px;
-
     font-family: Arial, sans-serif;
-
     font-size: 13px;
 }
 
 .hero-button.secondary {
     background: white;
-
     color: var(--rose-dark);
-
     border: 1px solid var(--border);
 }
 
@@ -352,15 +289,10 @@ a {
 .category-nav {
     max-width: 1200px;
     margin: auto;
-
     padding: 0 18px 15px;
-
     display: flex;
-
     gap: 8px;
-
     overflow-x: auto;
-
     scrollbar-width: none;
 }
 
@@ -370,19 +302,12 @@ a {
 
 .category-nav a {
     flex: 0 0 auto;
-
     background: white;
-
     border: 1px solid var(--border);
-
     padding: 9px 14px;
-
     border-radius: 25px;
-
     font-family: Arial, sans-serif;
-
     font-size: 11px;
-
     color: var(--rose-dark);
 }
 
@@ -393,51 +318,36 @@ a {
 
 .service-section {
     max-width: 1165px;
-
     margin: 20px auto 10px;
-
     padding: 0 18px;
 }
 
 .service-box {
     background: var(--white);
-
     border: 1px solid var(--border);
-
     border-radius: 20px;
-
     padding: 24px;
-
     text-align: center;
-
     box-shadow: 0 6px 22px rgba(82, 58, 49, 0.06);
 }
 
 .service-box h2 {
     margin: 0 0 8px;
-
     color: var(--rose-dark);
-
     font-size: 24px;
 }
 
 .service-box p {
     margin: 7px auto;
-
     max-width: 700px;
-
     color: var(--muted);
-
     font-family: Arial, sans-serif;
-
     font-size: 12px;
-
     line-height: 1.7;
 }
 
 .service-highlight {
     color: var(--rose-dark);
-
     font-weight: bold;
 }
 
@@ -448,51 +358,36 @@ a {
 
 .about-section {
     max-width: 1165px;
-
     margin: 25px auto 10px;
-
     padding: 0 18px;
 }
 
 .about-box {
     background: var(--white);
-
     border: 1px solid var(--border);
-
     border-radius: 20px;
-
     padding: 28px 24px;
-
     text-align: center;
-
     box-shadow: 0 6px 22px rgba(82, 58, 49, 0.06);
 }
 
 .about-box h2 {
     margin: 0 0 16px;
-
     color: var(--rose-dark);
-
     font-size: 26px;
 }
 
 .about-box p {
     max-width: 760px;
-
     margin: 9px auto;
-
     color: var(--muted);
-
     font-family: Arial, sans-serif;
-
     font-size: 12px;
-
     line-height: 1.8;
 }
 
 .about-highlight {
     color: var(--rose-dark) !important;
-
     font-weight: bold;
 }
 
@@ -503,31 +398,24 @@ a {
 
 .section {
     max-width: 1200px;
-
     margin: auto;
-
     padding: 42px 18px 5px;
 }
 
 .section-heading {
     text-align: center;
-
     margin-bottom: 25px;
 }
 
 .section-heading h2 {
     margin: 0;
-
     color: var(--rose-dark);
-
     font-size: 28px;
 }
 
 .section-heading p {
     margin: 8px 0 0;
-
     color: var(--muted);
-
     font-size: 12px;
 }
 
@@ -538,10 +426,7 @@ a {
 
 .product-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
 }
 
@@ -552,18 +437,11 @@ a {
 
 .product-card {
     background: var(--white);
-
     border: 1px solid var(--border);
-
     border-radius: 18px;
-
     overflow: hidden;
-
-    box-shadow:
-        0 6px 22px rgba(82, 58, 49, 0.07);
-
+    box-shadow: 0 6px 22px rgba(82, 58, 49, 0.07);
     display: flex;
-
     flex-direction: column;
 }
 
@@ -574,19 +452,14 @@ a {
 
 .product-image {
     position: relative;
-
     width: 100%;
-
     aspect-ratio: 1 / 1;
-
     background: #f5ece5;
-
     overflow: hidden;
 }
 
 .product-image a {
     display: block;
-
     width: 100%;
     height: 100%;
 }
@@ -594,11 +467,8 @@ a {
 .product-image img {
     width: 100%;
     height: 100%;
-
     object-fit: contain;
-
     display: block;
-
     transition: transform 0.25s ease;
 }
 
@@ -613,26 +483,16 @@ a {
 
 .slider-button {
     position: absolute;
-
     top: 50%;
-
     transform: translateY(-50%);
-
     width: 32px;
     height: 32px;
-
     border: none;
-
     border-radius: 50%;
-
     background: rgba(255,255,255,0.92);
-
     color: var(--rose-dark);
-
     font-size: 21px;
-
     cursor: pointer;
-
     z-index: 5;
 }
 
@@ -646,29 +506,20 @@ a {
 
 .image-dots {
     position: absolute;
-
     bottom: 8px;
-
     left: 0;
     right: 0;
-
     text-align: center;
-
     z-index: 5;
 }
 
 .image-dot {
     display: inline-block;
-
     width: 7px;
     height: 7px;
-
     margin: 0 3px;
-
     border-radius: 50%;
-
     background: #d5c2b9;
-
     cursor: pointer;
 }
 
@@ -683,57 +534,39 @@ a {
 
 .product-info {
     padding: 15px;
-
     display: flex;
-
     flex-direction: column;
-
     flex: 1;
 }
 
 .product-name {
     margin: 0 0 7px;
-
     color: var(--brown);
-
     font-size: 17px;
-
     line-height: 1.4;
-
     min-height: 48px;
 }
 
 .product-description {
     color: var(--muted);
-
     font-family: Arial, sans-serif;
-
     font-size: 11px;
-
     line-height: 1.55;
-
     min-height: 35px;
 }
 
 .product-price {
     margin: 9px 0 5px;
-
     color: var(--rose-dark);
-
     font-family: Arial, sans-serif;
-
     font-size: 13px;
-
     font-weight: bold;
 }
 
 .custom-colours {
     margin-bottom: 12px;
-
     color: var(--rose);
-
     font-family: Arial, sans-serif;
-
     font-size: 10px;
 }
 
@@ -744,31 +577,18 @@ a {
 
 .order-button {
     display: block;
-
     width: 100%;
-
     margin-top: auto;
-
     padding: 10px;
-
     background: var(--rose-dark);
-
     color: white;
-
     border: none;
-
     border-radius: 25px;
-
     text-align: center;
-
     font-family: Arial, sans-serif;
-
     font-size: 11px;
-
     font-weight: bold;
-
     cursor: pointer;
-
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -787,25 +607,15 @@ a {
 
 .no-results {
     display: none;
-
     max-width: 700px;
-
     margin: 35px auto;
-
     padding: 25px;
-
     text-align: center;
-
     color: var(--muted);
-
     background: var(--white);
-
     border: 1px solid var(--border);
-
     border-radius: 18px;
-
     font-family: Arial, sans-serif;
-
     font-size: 13px;
 }
 
@@ -816,57 +626,39 @@ a {
 
 footer {
     margin-top: 65px;
-
     padding: 38px 18px;
-
     background: var(--cream-dark);
-
     border-top: 1px solid var(--border);
-
     text-align: center;
 }
 
 footer h3 {
     margin: 0 0 8px;
-
     color: var(--rose-dark);
 }
 
 footer p {
     margin: 6px 0;
-
     color: var(--muted);
-
     font-family: Arial, sans-serif;
-
     font-size: 12px;
-
     line-height: 1.7;
 }
 
 .social-links {
     margin-top: 18px;
-
     display: flex;
-
     justify-content: center;
-
     gap: 10px;
-
     flex-wrap: wrap;
 }
 
 .social-links a {
     background: white;
-
     padding: 9px 15px;
-
     border-radius: 22px;
-
     font-family: Arial, sans-serif;
-
     font-size: 11px;
-
     border: 1px solid var(--border);
 }
 
@@ -879,13 +671,11 @@ footer p {
 
     .order-notice {
         font-size: 10px;
-
         padding: 8px 0;
     }
 
     .header-inner {
         padding: 8px 12px;
-
         gap: 8px;
     }
 
@@ -938,9 +728,7 @@ footer p {
     }
 
     .product-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
     }
 
@@ -950,13 +738,11 @@ footer p {
 
     .product-name {
         font-size: 14px;
-
         min-height: 42px;
     }
 
     .product-description {
         font-size: 9px;
-
         min-height: 32px;
     }
 
@@ -970,15 +756,12 @@ footer p {
 
     .order-button {
         padding: 9px 4px;
-
         font-size: 9px;
     }
 
     .menu {
         right: 10px;
-
         top: 68px;
-
         width: calc(100% - 20px);
     }
 }
@@ -2064,16 +1847,8 @@ function createProductCard(
 
 
     /* =====================================================
-       PRODUCT ORDER MESSAGE
+       DIRECT INSTAGRAM ORDER BUTTON
     ===================================================== */
-
-    const message =
-        `Hi! I'd like to order the ${product.name} (${product.price}). Please let me know the available options and order details.`;
-
-
-    const safeMessage =
-        JSON.stringify(message);
-
 
     info.innerHTML = `
 
@@ -2097,13 +1872,15 @@ function createProductCard(
         </div>
 
 
-        <button
+        <a
             class="order-button"
-            type="button"
-            onclick='orderOnInstagram(${safeMessage})'
+            href="${INSTAGRAM_DM}"
+            target="_blank"
+            rel="noopener"
+            aria-label="Order ${product.name} on Instagram"
         >
             💌 Order This Item
-        </button>
+        </a>
 
     `;
 
@@ -2114,84 +1891,6 @@ function createProductCard(
 
 
     return card;
-
-}
-
-
-/* =========================================================
-   ORDER ON INSTAGRAM — FIXED
-========================================================= */
-
-function orderOnInstagram(message) {
-
-    /*
-       First try to copy the exact product
-       order message.
-    */
-
-    try {
-
-        const textarea =
-            document.createElement(
-                "textarea"
-            );
-
-
-        textarea.value =
-            message;
-
-
-        textarea.style.position =
-            "fixed";
-
-        textarea.style.left =
-            "-9999px";
-
-        textarea.style.top =
-            "0";
-
-        textarea.style.opacity =
-            "0";
-
-
-        document.body.appendChild(
-            textarea
-        );
-
-
-        textarea.focus();
-
-        textarea.select();
-
-
-        document.execCommand(
-            "copy"
-        );
-
-
-        document.body.removeChild(
-            textarea
-        );
-
-    } catch (error) {
-
-        /*
-           If copying fails,
-           Instagram still opens.
-        */
-
-    }
-
-
-    /*
-       Open the Wrap & Wow 5
-       Instagram inbox.
-    */
-
-    window.open(
-        "https://ig.me/m/wrapandwow5",
-        "_blank"
-    );
 
 }
 
@@ -2575,14 +2274,11 @@ document.addEventListener(
 function makeId(text) {
 
     return text
-
         .toLowerCase()
-
         .replace(
             /[^a-z0-9]+/g,
             "-"
         )
-
         .replace(
             /^-|-$/g,
             ""
