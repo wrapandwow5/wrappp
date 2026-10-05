@@ -9,1088 +9,1003 @@
 <meta name="description" content="Wrap & Wow 5 - Handmade flowers, bouquets, gifts, accessories and customised creations.">
 
 <style>
-
-:root {
-    --cream: #fbf5ee;
-    --cream-dark: #f1e2d6;
-    --white: #fffdf9;
-    --rose: #b9797d;
-    --rose-dark: #875259;
-    --gold: #b99a68;
-    --brown: #493c38;
-    --muted: #81736d;
-    --border: #e8d8ce;
-    --shadow: 0 10px 30px rgba(82, 58, 49, 0.10);
+:root{
+    --cream:#fbf5ee;
+    --cream-dark:#f1e2d6;
+    --white:#fffdf9;
+    --rose:#b9797d;
+    --rose-dark:#875259;
+    --gold:#b99a68;
+    --brown:#493c38;
+    --muted:#81736d;
+    --border:#e8d8ce;
+    --shadow:0 10px 30px rgba(82,58,49,0.10);
 }
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    margin: 0;
-    background: var(--cream);
-    color: var(--brown);
-    font-family: Georgia, "Times New Roman", serif;
+body{
+    font-family:Georgia, "Times New Roman", serif;
+    background:var(--cream);
+    color:var(--brown);
+    line-height:1.6;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+button,
+input,
+select,
+textarea{
+    font:inherit;
 }
 
-
-/* =========================================================
-   MOVING ORDER NOTICE
-========================================================= */
-
-.order-notice {
-    width: 100%;
-    background: var(--rose-dark);
-    color: white;
-    overflow: hidden;
-    white-space: nowrap;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.3px;
-    line-height: 1.5;
-    padding: 9px 0;
+button{
+    cursor:pointer;
 }
 
-.order-notice-text {
-    display: inline-block;
-    padding-left: 100%;
-    animation: noticeMove 14s linear infinite;
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
-@keyframes noticeMove {
-    from {
-        transform: translateX(0);
+/* TOP NOTICE */
+.top-notice{
+    background:var(--rose-dark);
+    color:white;
+    overflow:hidden;
+    white-space:nowrap;
+    font-size:13px;
+    padding:8px 0;
+}
+
+.notice-track{
+    display:inline-block;
+    padding-left:100%;
+    animation:moveNotice 22s linear infinite;
+}
+
+@keyframes moveNotice{
+    from{transform:translateX(0);}
+    to{transform:translateX(-100%);}
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,253,249,.97);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:10px 18px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    min-width:0;
+}
+
+.brand img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.brand-text{
+    min-width:0;
+}
+
+.brand-name{
+    font-size:21px;
+    font-weight:bold;
+    color:var(--rose-dark);
+    white-space:nowrap;
+}
+
+.brand-tag{
+    font-size:10px;
+    letter-spacing:2px;
+    color:var(--gold);
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.search-box{
+    position:relative;
+}
+
+.search-box input{
+    width:210px;
+    padding:10px 14px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    outline:none;
+    background:white;
+    color:var(--brown);
+}
+
+.search-box input:focus{
+    border-color:var(--rose);
+}
+
+.menu-btn{
+    width:43px;
+    height:43px;
+    border:1px solid var(--border);
+    border-radius:50%;
+    background:var(--white);
+    color:var(--rose-dark);
+    font-size:21px;
+}
+
+/* MENU */
+.menu{
+    display:none;
+    border-top:1px solid var(--border);
+    background:var(--white);
+    padding:14px 18px 18px;
+}
+
+.menu.active{
+    display:block;
+}
+
+.menu-search{
+    margin-bottom:12px;
+}
+
+.menu-search input{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    outline:none;
+}
+
+.menu-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.menu-links button{
+    border:1px solid var(--border);
+    background:var(--cream);
+    color:var(--rose-dark);
+    border-radius:20px;
+    padding:8px 12px;
+}
+
+/* HERO */
+.hero{
+    max-width:1200px;
+    margin:0 auto;
+    padding:70px 18px 45px;
+    text-align:center;
+}
+
+.hero-small{
+    color:var(--gold);
+    letter-spacing:3px;
+    font-size:12px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.hero h1{
+    font-size:clamp(38px,8vw,68px);
+    line-height:1;
+    color:var(--rose-dark);
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:650px;
+    margin:0 auto 25px;
+    color:var(--muted);
+    font-size:16px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.primary-btn,
+.secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 18px;
+    border-radius:30px;
+    border:1px solid var(--rose);
+    transition:.2s;
+}
+
+.primary-btn{
+    background:var(--rose-dark);
+    color:white;
+}
+
+.secondary-btn{
+    background:white;
+    color:var(--rose-dark);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* CATEGORY NAV */
+.category-nav{
+    max-width:1200px;
+    margin:0 auto 35px;
+    padding:0 18px;
+}
+
+.category-scroll{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding-bottom:7px;
+}
+
+.category-scroll::-webkit-scrollbar{
+    height:5px;
+}
+
+.category-scroll::-webkit-scrollbar-thumb{
+    background:var(--cream-dark);
+    border-radius:10px;
+}
+
+.category-btn{
+    white-space:nowrap;
+    border:1px solid var(--border);
+    background:white;
+    color:var(--rose-dark);
+    border-radius:25px;
+    padding:9px 14px;
+}
+
+/* MAIN */
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:0 18px 50px;
+}
+
+.category-section{
+    margin-bottom:55px;
+    scroll-margin-top:110px;
+}
+
+.category-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.category-title h2{
+    color:var(--rose-dark);
+    font-size:27px;
+}
+
+.category-line{
+    height:1px;
+    background:var(--border);
+    flex:1;
+}
+
+/* PRODUCT GRID */
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:15px;
+}
+
+.product-card{
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+}
+
+.product-media{
+    position:relative;
+    background:var(--cream-dark);
+    aspect-ratio:1/1;
+    overflow:hidden;
+}
+
+.product-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    cursor:zoom-in;
+}
+
+.slider-controls{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    pointer-events:none;
+}
+
+.slider-btn{
+    pointer-events:auto;
+    border:none;
+    background:rgba(255,255,255,.82);
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    margin:7px;
+    color:var(--rose-dark);
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.dots{
+    position:absolute;
+    bottom:8px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:5px;
+}
+
+.dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:rgba(255,255,255,.65);
+}
+
+.dot.active{
+    background:var(--rose-dark);
+}
+
+.product-info{
+    padding:14px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.product-name{
+    font-size:18px;
+    font-weight:bold;
+    color:var(--brown);
+    margin-bottom:6px;
+}
+
+.product-price{
+    color:var(--rose-dark);
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.product-description{
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:12px;
+}
+
+.product-actions{
+    margin-top:auto;
+}
+
+.order-button{
+    width:100%;
+    border:none;
+    border-radius:25px;
+    background:var(--rose-dark);
+    color:white;
+    padding:11px 13px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.order-button:hover{
+    background:var(--rose);
+    transform:translateY(-1px);
+}
+
+/* INFO SECTIONS */
+.info-section{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:var(--shadow);
+}
+
+.info-section h2{
+    color:var(--rose-dark);
+    margin-bottom:10px;
+}
+
+.info-section p{
+    color:var(--muted);
+    margin-bottom:8px;
+}
+
+/* ORDER MODAL */
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    background:rgba(48,35,31,.58);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+    overflow-y:auto;
+}
+
+.modal-overlay.active{
+    display:flex;
+}
+
+.order-modal{
+    width:min(600px,100%);
+    max-height:94vh;
+    overflow-y:auto;
+    background:var(--white);
+    border-radius:22px;
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
+    padding:22px;
+    position:relative;
+}
+
+.modal-close{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:50%;
+    background:var(--cream-dark);
+    color:var(--rose-dark);
+    font-size:20px;
+}
+
+.order-modal h2{
+    color:var(--rose-dark);
+    margin-right:40px;
+    margin-bottom:5px;
+}
+
+.modal-subtitle{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.selected-product{
+    background:var(--cream);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:12px;
+    margin-bottom:17px;
+}
+
+.selected-product strong{
+    color:var(--brown);
+}
+
+.selected-product span{
+    display:block;
+    color:var(--rose-dark);
+    font-weight:bold;
+    margin-top:2px;
+}
+
+.form-group{
+    margin-bottom:13px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:6px;
+    color:var(--brown);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid var(--border);
+    border-radius:11px;
+    outline:none;
+    background:white;
+    color:var(--brown);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--rose);
+}
+
+.form-group textarea{
+    min-height:90px;
+    resize:vertical;
+}
+
+.order-instruction{
+    background:#fff7ed;
+    border:1px solid #ecd8c5;
+    border-radius:14px;
+    padding:13px;
+    margin:15px 0;
+    color:var(--brown);
+    font-size:13px;
+}
+
+.order-instruction strong{
+    color:var(--rose-dark);
+}
+
+.clipboard-note{
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    margin-top:9px;
+    line-height:1.5;
+}
+
+.submit-order{
+    width:100%;
+    border:none;
+    border-radius:25px;
+    background:var(--rose-dark);
+    color:white;
+    padding:13px;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.submit-order:hover{
+    background:var(--rose);
+}
+
+/* SUCCESS POPUP */
+.success-overlay{
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    background:rgba(48,35,31,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.success-overlay.active{
+    display:flex;
+}
+
+.success-box{
+    width:min(430px,100%);
+    background:var(--white);
+    border-radius:22px;
+    padding:27px 22px;
+    text-align:center;
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+
+.success-icon{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#eee3d8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 13px;
+    font-size:28px;
+}
+
+.success-box h3{
+    color:var(--rose-dark);
+    margin-bottom:9px;
+    font-size:22px;
+}
+
+.success-box p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:16px;
+}
+
+.success-steps{
+    text-align:left;
+    background:var(--cream);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:13px 15px;
+    margin-bottom:17px;
+    font-size:13px;
+    color:var(--brown);
+}
+
+.success-steps div{
+    margin:5px 0;
+}
+
+.success-button{
+    width:100%;
+    border:none;
+    border-radius:25px;
+    background:var(--rose-dark);
+    color:white;
+    padding:12px;
+    font-weight:bold;
+}
+
+/* IMAGE VIEWER */
+.image-viewer{
+    position:fixed;
+    inset:0;
+    z-index:4000;
+    background:rgba(20,15,13,.88);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.image-viewer.active{
+    display:flex;
+}
+
+.image-viewer img{
+    max-width:95%;
+    max-height:90vh;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+.viewer-close{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:white;
+    color:var(--rose-dark);
+    font-size:22px;
+}
+
+/* FOOTER */
+footer{
+    background:var(--rose-dark);
+    color:white;
+    text-align:center;
+    padding:30px 18px;
+}
+
+footer p{
+    margin-bottom:7px;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:12px;
+}
+
+.footer-links a{
+    text-decoration:underline;
+}
+
+/* MOBILE */
+@media(max-width:650px){
+    .header-inner{
+        min-height:68px;
     }
 
-    to {
-        transform: translateX(-100%);
+    .brand img{
+        width:48px;
+        height:48px;
+    }
+
+    .brand-name{
+        font-size:17px;
+    }
+
+    .brand-tag{
+        font-size:8px;
+        letter-spacing:1.5px;
+    }
+
+    .search-box{
+        display:none;
+    }
+
+    .hero{
+        padding-top:50px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .product-info{
+        padding:11px;
+    }
+
+    .product-name{
+        font-size:15px;
+    }
+
+    .product-price{
+        font-size:13px;
+    }
+
+    .product-description{
+        font-size:12px;
+    }
+
+    .order-button{
+        font-size:12px;
+        padding:10px 7px;
+    }
+
+    .category-title h2{
+        font-size:22px;
+    }
+
+    .order-modal{
+        padding:18px;
+        border-radius:18px;
     }
 }
 
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255, 253, 249, 0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-    max-width: 1200px;
-    margin: auto;
-    padding: 10px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo {
-    width: 58px;
-    height: 58px;
-    object-fit: contain;
-    border-radius: 50%;
-    background: white;
-}
-
-.brand-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.brand-name {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--brown);
-}
-
-.brand-sub {
-    margin-top: 4px;
-    font-family: Arial, sans-serif;
-    font-size: 9px;
-    letter-spacing: 2px;
-    color: var(--gold);
-}
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-.top-search {
-    flex: 1;
-    max-width: 430px;
-    position: relative;
-}
-
-.top-search input {
-    width: 100%;
-    padding: 11px 16px;
-    border: 1px solid var(--border);
-    border-radius: 25px;
-    outline: none;
-    background: var(--cream);
-    color: var(--brown);
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-}
-
-.top-search input:focus {
-    border-color: var(--rose);
-}
-
-
-/* =========================================================
-   MENU
-========================================================= */
-
-.menu-button {
-    border: none;
-    background: transparent;
-    color: var(--rose-dark);
-    font-size: 30px;
-    cursor: pointer;
-    padding: 5px 8px;
-}
-
-.menu {
-    display: none;
-    position: absolute;
-    right: 18px;
-    top: 78px;
-    width: min(370px, calc(100% - 36px));
-    max-height: 78vh;
-    overflow-y: auto;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 12px;
-    box-shadow: var(--shadow);
-}
-
-.menu.open {
-    display: block;
-}
-
-.menu-search {
-    margin-bottom: 8px;
-}
-
-.menu-search input {
-    width: 100%;
-    padding: 11px 13px;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    outline: none;
-    background: var(--cream);
-    color: var(--brown);
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-}
-
-.menu a {
-    display: block;
-    padding: 13px;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-}
-
-.menu a:hover {
-    background: var(--cream-dark);
-    color: var(--rose-dark);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    max-width: 1200px;
-    margin: auto;
-    padding: 70px 20px 45px;
-    text-align: center;
-}
-
-.hero-small {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-}
-
-.hero h1 {
-    margin: 15px 0 10px;
-    font-size: clamp(40px, 8vw, 68px);
-    color: var(--rose-dark);
-}
-
-.hero p {
-    max-width: 650px;
-    margin: 0 auto 25px;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.hero-button {
-    display: inline-block;
-    background: var(--rose-dark);
-    color: white;
-    padding: 13px 22px;
-    border-radius: 30px;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-}
-
-.hero-button.secondary {
-    background: white;
-    color: var(--rose-dark);
-    border: 1px solid var(--border);
-}
-
-
-/* =========================================================
-   CATEGORY NAV
-========================================================= */
-
-.category-nav {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 18px 15px;
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.category-nav::-webkit-scrollbar {
-    display: none;
-}
-
-.category-nav a {
-    flex: 0 0 auto;
-    background: white;
-    border: 1px solid var(--border);
-    padding: 9px 14px;
-    border-radius: 25px;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    color: var(--rose-dark);
-}
-
-
-/* =========================================================
-   SERVICE
-========================================================= */
-
-.service-section {
-    max-width: 1165px;
-    margin: 20px auto 10px;
-    padding: 0 18px;
-}
-
-.service-box {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 24px;
-    text-align: center;
-    box-shadow: 0 6px 22px rgba(82, 58, 49, 0.06);
-}
-
-.service-box h2 {
-    margin: 0 0 8px;
-    color: var(--rose-dark);
-    font-size: 24px;
-}
-
-.service-box p {
-    margin: 7px auto;
-    max-width: 700px;
-    color: var(--muted);
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    line-height: 1.7;
-}
-
-.service-highlight {
-    color: var(--rose-dark);
-    font-weight: bold;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-section {
-    max-width: 1165px;
-    margin: 25px auto 10px;
-    padding: 0 18px;
-}
-
-.about-box {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 28px 24px;
-    text-align: center;
-    box-shadow: 0 6px 22px rgba(82, 58, 49, 0.06);
-}
-
-.about-box h2 {
-    margin: 0 0 16px;
-    color: var(--rose-dark);
-    font-size: 26px;
-}
-
-.about-box p {
-    max-width: 760px;
-    margin: 9px auto;
-    color: var(--muted);
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    line-height: 1.8;
-}
-
-.about-highlight {
-    color: var(--rose-dark) !important;
-    font-weight: bold;
-}
-
-
-/* =========================================================
-   SECTIONS
-========================================================= */
-
-.section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 42px 18px 5px;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.section-heading h2 {
-    margin: 0;
-    color: var(--rose-dark);
-    font-size: 28px;
-}
-
-.section-heading p {
-    margin: 8px 0 0;
-    color: var(--muted);
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   PRODUCT GRID
-========================================================= */
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-}
-
-
-/* =========================================================
-   PRODUCT CARD
-========================================================= */
-
-.product-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 6px 22px rgba(82, 58, 49, 0.07);
-    display: flex;
-    flex-direction: column;
-}
-
-
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
-
-.product-image {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background: #f5ece5;
-    overflow: hidden;
-}
-
-.product-image a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    transition: transform 0.25s ease;
-}
-
-.product-image a:hover img {
-    transform: scale(1.03);
-}
-
-
-/* =========================================================
-   SLIDER
-========================================================= */
-
-.slider-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 32px;
-    height: 32px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.92);
-    color: var(--rose-dark);
-    font-size: 21px;
-    cursor: pointer;
-    z-index: 5;
-}
-
-.slider-prev {
-    left: 8px;
-}
-
-.slider-next {
-    right: 8px;
-}
-
-.image-dots {
-    position: absolute;
-    bottom: 8px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 5;
-}
-
-.image-dot {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    margin: 0 3px;
-    border-radius: 50%;
-    background: #d5c2b9;
-    cursor: pointer;
-}
-
-.image-dot.active {
-    background: var(--rose-dark);
-}
-
-
-/* =========================================================
-   PRODUCT INFO
-========================================================= */
-
-.product-info {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.product-name {
-    margin: 0 0 7px;
-    color: var(--brown);
-    font-size: 17px;
-    line-height: 1.4;
-    min-height: 48px;
-}
-
-.product-description {
-    color: var(--muted);
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    line-height: 1.55;
-    min-height: 35px;
-}
-
-.product-price {
-    margin: 9px 0 5px;
-    color: var(--rose-dark);
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.custom-colours {
-    margin-bottom: 12px;
-    color: var(--rose);
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-}
-
-
-/* =========================================================
-   ORDER BUTTON
-========================================================= */
-
-.order-button {
-    display: block;
-    width: 100%;
-    margin-top: auto;
-    padding: 10px;
-    background: var(--rose-dark);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight: bold;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.order-button:hover {
-    background: #714149;
-}
-
-.order-button:active {
-    transform: scale(0.98);
-}
-
-
-/* =========================================================
-   NO RESULTS
-========================================================= */
-
-.no-results {
-    display: none;
-    max-width: 700px;
-    margin: 35px auto;
-    padding: 25px;
-    text-align: center;
-    color: var(--muted);
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    margin-top: 65px;
-    padding: 38px 18px;
-    background: var(--cream-dark);
-    border-top: 1px solid var(--border);
-    text-align: center;
-}
-
-footer h3 {
-    margin: 0 0 8px;
-    color: var(--rose-dark);
-}
-
-footer p {
-    margin: 6px 0;
-    color: var(--muted);
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    line-height: 1.7;
-}
-
-.social-links {
-    margin-top: 18px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.social-links a {
-    background: white;
-    padding: 9px 15px;
-    border-radius: 22px;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    border: 1px solid var(--border);
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .order-notice {
-        font-size: 10px;
-        padding: 8px 0;
+/* VERY SMALL PHONES */
+@media(max-width:360px){
+    .brand-name{
+        font-size:15px;
     }
 
-    .header-inner {
-        padding: 8px 12px;
-        gap: 8px;
+    .product-name{
+        font-size:14px;
     }
 
-    .logo {
-        width: 50px;
-        height: 50px;
-    }
-
-    .brand-name {
-        font-size: 17px;
-    }
-
-    .brand-sub {
-        font-size: 8px;
-    }
-
-    .top-search {
-        display: none;
-    }
-
-    .hero {
-        padding: 50px 15px 38px;
-    }
-
-    .hero h1 {
-        font-size: 42px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .hero-button {
-        width: min(300px, 100%);
-    }
-
-    .service-section,
-    .about-section {
-        padding: 0 10px;
-    }
-
-    .service-box,
-    .about-box {
-        padding: 20px 15px;
-    }
-
-    .section {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .product-info {
-        padding: 10px;
-    }
-
-    .product-name {
-        font-size: 14px;
-        min-height: 42px;
-    }
-
-    .product-description {
-        font-size: 9px;
-        min-height: 32px;
-    }
-
-    .product-price {
-        font-size: 11px;
-    }
-
-    .custom-colours {
-        font-size: 9px;
-    }
-
-    .order-button {
-        padding: 9px 4px;
-        font-size: 9px;
-    }
-
-    .menu {
-        right: 10px;
-        top: 68px;
-        width: calc(100% - 20px);
+    .product-price{
+        font-size:12px;
     }
 }
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .brand-text {
-        display: none;
-    }
-
-    .product-grid {
-        gap: 8px;
-    }
-
-    .product-name {
-        font-size: 13px;
-    }
-
-    .product-description {
-        font-size: 8px;
-    }
-
-}
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================================================
-     MOVING ORDER NOTICE
-========================================================= -->
-
-<div class="order-notice">
-
-    <div class="order-notice-text">
-
-        🎀 Please Note: Handmade Orders Take 4–5 Working Days
-        • Sialkot Delivery Rs. 250
-        • Pickup Available 🎀
-
+<!-- TOP NOTICE -->
+<div class="top-notice">
+    <div class="notice-track">
+        🎀 Please Note: Handmade Orders Take 4–5 Working Days • Sialkot Delivery Rs. 250 • Pickup Available 🎀
     </div>
-
 </div>
 
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
-<header class="header">
-
+<!-- HEADER -->
+<header>
     <div class="header-inner">
 
-        <a href="#top" class="brand">
-
-            <img
-                src="images/logo.png"
-                alt="Wrap & Wow 5 Logo"
-                class="logo"
-            >
-
-            <span class="brand-text">
-
-                <span class="brand-name">
-                    Wrap & Wow 5
-                </span>
-
-                <span class="brand-sub">
-                    HANDMADE WITH LOVE
-                </span>
-
-            </span>
-
+        <a href="#" class="brand">
+            <img src="images/logo.png" alt="Wrap & Wow 5 Logo">
+            <div class="brand-text">
+                <div class="brand-name">Wrap & Wow 5</div>
+                <div class="brand-tag">HANDMADE WITH LOVE</div>
+            </div>
         </a>
 
+        <div class="header-actions">
 
-        <div class="top-search">
-
-            <input
-                id="topSearch"
-                type="search"
-                placeholder="Search products..."
-                aria-label="Search products"
-            >
-
-        </div>
-
-
-        <button
-            class="menu-button"
-            type="button"
-            onclick="toggleMenu()"
-            aria-label="Open menu"
-        >
-            ☰
-        </button>
-
-
-        <nav id="menu" class="menu">
-
-            <div class="menu-search">
-
+            <div class="search-box">
                 <input
-                    id="menuSearch"
                     type="search"
+                    id="desktopSearch"
                     placeholder="Search products..."
                     aria-label="Search products"
                 >
-
             </div>
 
-        </nav>
+            <button
+                type="button"
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
 
+        </div>
     </div>
 
+    <div class="menu" id="menu">
+
+        <div class="menu-search">
+            <input
+                type="search"
+                id="mobileSearch"
+                placeholder="Search products..."
+                aria-label="Search products"
+            >
+        </div>
+
+        <div class="menu-links" id="menuLinks"></div>
+
+    </div>
 </header>
 
-
-<!-- =========================================================
-     MAIN
-========================================================= -->
-
-<main id="top">
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
+<!-- HERO -->
 <section class="hero">
 
     <div class="hero-small">
         Handmade • Custom • Thoughtful
     </div>
 
-
-    <h1>
-        Wrap & Wow 5
-    </h1>
-
+    <h1>Wrap & Wow 5</h1>
 
     <p>
-        Handmade flowers, bouquets, gifts and beautiful little
-        details made especially for your special moments.
+        Handmade flowers, bouquets, gifts, accessories and customised
+        creations — wrapped with love for every special moment.
     </p>
-
 
     <div class="hero-buttons">
 
         <a
-            class="hero-button"
+            class="primary-btn"
             href="https://ig.me/m/wrapandwow5"
             target="_blank"
             rel="noopener"
         >
-            Order on Instagram
+            💌 Order on Instagram
         </a>
 
-
         <a
-            class="hero-button secondary"
+            class="secondary-btn"
             href="https://ig.me/m/wrapandwow5"
             target="_blank"
             rel="noopener"
         >
-            Custom Order
+            🎀 Custom Order
         </a>
 
     </div>
 
 </section>
 
+<!-- CATEGORY NAV -->
+<div class="category-nav">
+    <div class="category-scroll" id="categoryNav"></div>
+</div>
 
-<!-- =========================================================
-     CATEGORY NAVIGATION
-========================================================= -->
+<!-- PRODUCTS -->
+<main id="productsContainer"></main>
 
-<div
-    id="categoryNav"
-    class="category-nav"
-></div>
+<!-- DELIVERY INFO -->
+<section style="max-width:1200px;margin:0 auto;padding:0 18px 30px;">
 
+    <div class="info-section">
 
-<!-- =========================================================
-     DELIVERY + PICKUP
-========================================================= -->
-
-<section class="service-section">
-
-    <div class="service-box">
-
-        <h2>
-            Delivery + Pickup Service
-        </h2>
-
+        <h2>🚚 Delivery & Pickup</h2>
 
         <p>
-            Delivery and take away service is available for
-            Wrap & Wow 5 orders.
+            Delivery and take away service is available for Wrap & Wow 5 orders.
         </p>
-
-
-        <p class="service-highlight">
-            Sialkot delivery + pickup available.
-        </p>
-
 
         <p>
-            Delivery charges: Rs. 250
+            📍 Sialkot delivery + pickup available.
         </p>
 
+        <p>
+            💵 Delivery charges: Rs. 250
+        </p>
 
         <p>
-            For customised orders, please contact us through Instagram
+            ⏳ Handmade orders usually take 4–5 working days.
+        </p>
+
+        <p>
+            🎨 For customised orders, please contact us through Instagram
             with your preferred colours, quantity and required date.
         </p>
 
     </div>
 
-</section>
+    <div class="info-section">
 
+        <h2>♡ About Wrap & Wow 5</h2>
 
-<!-- =========================================================
-     ABOUT
-========================================================= -->
-
-<section
-    class="about-section"
-    id="about"
->
-
-    <div class="about-box">
-
-        <h2>
-            🎀 About Wrap & Wow
-        </h2>
-
-
-        <p class="about-highlight">
-
-            Handmade with love, created to make every moment
-            a little more special. 🎀
-
+        <p>
+            Wrap & Wow 5 is a handmade gift business based in Sialkot,
+            creating thoughtful gifts, flowers, bouquets, accessories,
+            stationery and customised creations.
         </p>
 
-
-        <p class="about-highlight">
-
-            📍 Sialkot, Pakistan
-
-            <br>
-
-            🚚 Delivery Rs. 250 • Pickup available
-
-            <br>
-
-            ⏰ 4–5 working days after order confirmation.
-
+        <p>
+            Every order is handmade with care and wrapped with love. 🎀
         </p>
 
     </div>
 
 </section>
 
-
-<!-- =========================================================
-     CATALOGUE
-========================================================= -->
-
-<div id="catalogue"></div>
-
-
-<div
-    id="noResults"
-    class="no-results"
->
-    No products found. Try another search.
-</div>
-
-
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
+<!-- FOOTER -->
 <footer>
 
-    <h3>
-        Wrap & Wow 5
-    </h3>
+    <p><strong>Wrap & Wow 5</strong></p>
 
+    <p>Handmade with love ♡</p>
 
-    <p>
-        Handmade gifts • Custom colours • Sialkot, Pakistan
-    </p>
-
-
-    <p>
-        Delivery & take away service available.
-    </p>
-
-
-    <div class="social-links">
+    <div class="footer-links">
 
         <a
             href="https://www.instagram.com/wrapandwow5/"
             target="_blank"
             rel="noopener"
         >
-            Instagram: @wrapandwow5
+            Instagram @wrapandwow5
         </a>
-
 
         <a
             href="https://www.tiktok.com/@wrapandwow.5"
             target="_blank"
             rel="noopener"
         >
-            TikTok: @wrapandwow.5
+            TikTok @wrapandwow.5
         </a>
 
     </div>
@@ -1098,12 +1013,276 @@ footer p {
 </footer>
 
 
+<!-- ORDER MODAL -->
+<div
+    class="modal-overlay"
+    id="orderModal"
+    aria-hidden="true"
+>
+
+    <div class="order-modal">
+
+        <button
+            type="button"
+            class="modal-close"
+            onclick="closeOrderModal()"
+            aria-label="Close order form"
+        >
+            ×
+        </button>
+
+        <h2>💌 Place Your Order</h2>
+
+        <p class="modal-subtitle">
+            Fill in your order details below. Your information will be
+            prepared for our Instagram DM.
+        </p>
+
+        <div class="selected-product">
+
+            <strong id="selectedProductName">
+                Product
+            </strong>
+
+            <span id="selectedProductPrice">
+                Price
+            </span>
+
+        </div>
+
+        <form id="orderForm">
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Your Name *
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="quantity">
+                    Quantity *
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    value="1"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="colour">
+                    Preferred Colour
+                </label>
+
+                <input
+                    type="text"
+                    id="colour"
+                    placeholder="e.g. Pink, white, lavender..."
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="deliveryMethod">
+                    Delivery or Pickup *
+                </label>
+
+                <select
+                    id="deliveryMethod"
+                    required
+                >
+
+                    <option value="">
+                        Select an option
+                    </option>
+
+                    <option value="Delivery — Sialkot">
+                        Delivery — Sialkot (+ Rs. 250)
+                    </option>
+
+                    <option value="Pickup">
+                        Pickup
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="requiredDate">
+                    Required Date *
+                </label>
+
+                <input
+                    type="date"
+                    id="requiredDate"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="additionalDetails">
+                    Additional Details / Customisation
+                </label>
+
+                <textarea
+                    id="additionalDetails"
+                    placeholder="Write any colour, design, name, message or other customisation details..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- CLEARER INSTRUCTION -->
+            <div class="order-instruction">
+
+                <strong>📋 How your order will be sent:</strong>
+
+                <div style="margin-top:7px;">
+                    Your order details will be copied automatically to your
+                    clipboard when you submit this form.
+                </div>
+
+                <div style="margin-top:7px;">
+                    Instagram will then open. Tap the message box in our DM,
+                    <strong>paste the copied message</strong>, and press
+                    <strong>Send</strong>.
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-order"
+            >
+                📋 Copy Order Details & Continue to Instagram
+            </button>
+
+            <div class="clipboard-note">
+                Your order details will be copied automatically.
+                After Instagram opens, paste the message in our DM and send it. 💕
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- SUCCESS POPUP -->
+<div
+    class="success-overlay"
+    id="successOverlay"
+    aria-hidden="true"
+>
+
+    <div class="success-box">
+
+        <div class="success-icon">
+            ✅
+        </div>
+
+        <h3>
+            Order details copied!
+        </h3>
+
+        <p>
+            Your complete order information is now copied and ready
+            to paste into our Instagram DM.
+        </p>
+
+        <div class="success-steps">
+
+            <div>
+                <strong>1.</strong>
+                Instagram will open now.
+            </div>
+
+            <div>
+                <strong>2.</strong>
+                Open our message box.
+            </div>
+
+            <div>
+                <strong>3.</strong>
+                Tap and hold the message box, then choose
+                <strong>Paste</strong>.
+            </div>
+
+            <div>
+                <strong>4.</strong>
+                Check your details and tap <strong>Send</strong>. 💕
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="success-button"
+            onclick="continueToInstagram()"
+        >
+            💌 Open Instagram
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- IMAGE VIEWER -->
+<div
+    class="image-viewer"
+    id="imageViewer"
+>
+
+    <button
+        type="button"
+        class="viewer-close"
+        onclick="closeImageViewer()"
+    >
+        ×
+    </button>
+
+    <img
+        id="viewerImage"
+        src=""
+        alt="Full size product image"
+    >
+
+</div>
+
+
 <script>
 
-
-/* =========================================================
+/* =========================
    INSTAGRAM
-========================================================= */
+========================= */
 
 const INSTAGRAM =
     "https://www.instagram.com/wrapandwow5/";
@@ -1112,370 +1291,419 @@ const INSTAGRAM_DM =
     "https://ig.me/m/wrapandwow5";
 
 
-/* =========================================================
-   COMPLETE PRODUCT CATALOGUE
-========================================================= */
+/* =========================
+   PRODUCTS
+========================= */
 
 const products = [
 
     {
-        category: "Ribbon Flowers & Bouquets",
-        name: "Glitter Flowers",
-        price: "Rs. 400",
-        images: "images/glitter-flower.jpg"
+        category:"Ribbon Flowers & Bouquets",
+        name:"Glitter Flowers",
+        price:"Rs. 400",
+        description:"Handmade glitter ribbon flowers.",
+        images:[]
     },
 
     {
-        category: "Ribbon Flowers & Bouquets",
-        name: "Dahlia Ribbon Flowers",
-        price: "Rs. 350 each",
-        images:
-            "images/IMG-20261002-WA0010.jpg|images/IMG-20260819-WA0022.jpg"
+        category:"Ribbon Flowers & Bouquets",
+        name:"Dahlia Ribbon Flowers",
+        price:"Rs. 350 each",
+        description:"Beautiful handmade dahlia ribbon flowers.",
+        images:[
+            "images/IMG-20261002-WA0010.jpg",
+            "images/IMG-20260819-WA0022.jpg"
+        ]
     },
 
     {
-        category: "Ribbon Flowers & Bouquets",
-        name: "Sunflower Ribbon Flower",
-        price: "Rs. 400",
-        images: "images/sunflower-ribbon-flower.jpg"
+        category:"Ribbon Flowers & Bouquets",
+        name:"Sunflower Ribbon Flower",
+        price:"Rs. 400",
+        description:"Bright handmade sunflower ribbon flower.",
+        images:[]
     },
 
     {
-        category: "Ribbon Flowers & Bouquets",
-        name: "Blossom Ribbon Flower",
-        price: "Rs. 350",
-        images: "images/blossom-ribbon-flower.jpg"
+        category:"Ribbon Flowers & Bouquets",
+        name:"Blossom Ribbon Flower",
+        price:"Rs. 350",
+        description:"Cute five-petal handmade ribbon flower.",
+        images:[]
     },
 
     {
-        category: "Ribbon Flowers & Bouquets",
-        name: "Fur Flower",
-        price: "Rs. 250",
-        images: "images/fur-flower.jpg"
+        category:"Ribbon Flowers & Bouquets",
+        name:"Fur Flower",
+        price:"Rs. 250",
+        description:"Soft and pretty handmade fur flower.",
+        images:[]
     },
 
     {
-        category: "Ribbon Flowers & Bouquets",
-        name: "Tulip Ribbon Flower",
-        price: "Rs. 350",
-        images: "images/tulip-ribbon-flower.jpg"
+        category:"Ribbon Flowers & Bouquets",
+        name:"Tulip Ribbon Flower",
+        price:"Rs. 350",
+        description:"Elegant handmade ribbon tulip.",
+        images:[]
     },
 
     {
-        category: "Ribbon Flowers & Bouquets",
-        name: "Ribbon Vase Bunch",
-        price: "Price depends on quantity",
-        images: "images/vase-ribbon-bunch.jpg"
-    },
-
-
-    {
-        category: "Ribbon Gajras",
-        name: "Ribbon Gajra",
-        price: "Rs. 950 / pair",
-        images: "images/ribbon-gajra.jpg"
-    },
-
-    {
-        category: "Ribbon Gajras",
-        name: "Heavy Ribbon Gajry",
-        price: "Rs. 1,300 / pair",
-        images: "images/ribbon-gajra.jpg"
+        category:"Ribbon Flowers & Bouquets",
+        name:"Ribbon Vase Bunch",
+        price:"Price depends on quantity",
+        description:"Custom ribbon flower vase bunch.",
+        images:[]
     },
 
 
     {
-        category: "Bracelets & Bands",
-        name: "Floral Bracelets",
-        price: "Rs. 400",
-        images: "images/bracelet.jpg"
+        category:"Ribbon Gajras",
+        name:"Ribbon Gajra",
+        price:"Rs. 950 / pair",
+        description:"Handmade ribbon gajra pair.",
+        images:[]
     },
 
     {
-        category: "Bracelets & Bands",
-        name: "Floral Bands",
-        price: "Rs. 350",
-        images: "images/bracelet.jpg"
-    },
-
-
-    {
-        category: "Hairpins & Accessories",
-        name: "Hairpins",
-        price: "Rs. 100",
-        images: "images/hairpins.jpg"
+        category:"Ribbon Gajras",
+        name:"Heavy Ribbon Gajry",
+        price:"Rs. 1,300 / pair",
+        description:"Heavy handmade ribbon gajra pair.",
+        images:[]
     },
 
 
     {
-        category: "Gifts",
-        name: "Mini Gift Baskets",
-        price: "Rs. 2,000",
-        images: "images/mini-basket.jpg"
+        category:"Bracelets & Bands",
+        name:"Floral Bracelets",
+        price:"Rs. 400",
+        description:"Handmade floral bracelet.",
+        images:[]
     },
 
     {
-        category: "Gifts",
-        name: "Eid Packs",
-        price: "Rs. 1,000",
-        images: "images/eid-pack.jpg"
-    },
-
-    {
-        category: "Gifts",
-        name: "Sorry Box",
-        price: "Rs. 1,800",
-        images: "images/sorry-box.jpg"
-    },
-
-    {
-        category: "Gifts",
-        name: "Surprise Box",
-        price: "Rs. 7,000",
-        images: "images/surprise-box.jpg"
-    },
-
-    {
-        category: "Gifts",
-        name: "Gift Boxes",
-        price: "Rs. 3,000",
-        images: "images/gift-box.jpg"
-    },
-
-    {
-        category: "Gifts",
-        name: "Chocolate Box",
-        price: "Rs. 10,000",
-        images: "images/chocolate-box.jpg"
-    },
-
-    {
-        category: "Gifts",
-        name: "Birthday Magazine (Handwritten)",
-        price: "Rs. 500",
-        images: "images/birthday-magazine.jpg"
-    },
-
-    {
-        category: "Gifts",
-        name: "Handwritten Letter",
-        price: "Rs. 200",
-        images: "images/handwritten-letter.jpg"
+        category:"Bracelets & Bands",
+        name:"Floral Bands",
+        price:"Rs. 350",
+        description:"Handmade floral band.",
+        images:[]
     },
 
 
     {
-        category: "Charms & Stickers",
-        name: "Bag Charms",
-        price: "Rs. 150",
-        images: "images/bag-charm.jpg"
-    },
-
-    {
-        category: "Charms & Stickers",
-        name: "Bow Charms",
-        price: "Rs. 100",
-        images: "images/bow-charm.jpg"
-    },
-
-    {
-        category: "Charms & Stickers",
-        name: "Mini Bouquet Keychain",
-        price: "Rs. 250",
-        images: "images/mini-bouquet-keychain.jpg"
-    },
-
-    {
-        category: "Charms & Stickers",
-        name: "Mini Sticker Packages",
-        price: "Rs. 50 for 2",
-        images: "images/sticker-pack.jpg"
+        category:"Hairpins & Accessories",
+        name:"Hairpins",
+        price:"Rs. 100",
+        description:"Cute handmade decorative hairpins.",
+        images:[]
     },
 
 
     {
-        category: "Accessories",
-        name: "Pearl Head Crown",
-        price: "Rs. 1,900",
-        images: "images/pearl-head-crown.jpg"
+        category:"Gifts",
+        name:"Mini Gift Baskets",
+        price:"Rs. 2,000",
+        description:"Mini customised gift basket.",
+        images:[]
+    },
+
+    {
+        category:"Gifts",
+        name:"Eid Packs",
+        price:"Rs. 1,000",
+        description:"Cute Eid gift packs.",
+        images:[]
+    },
+
+    {
+        category:"Gifts",
+        name:"Sorry Box",
+        price:"Rs. 1,800",
+        description:"A thoughtful handmade sorry gift box.",
+        images:[]
+    },
+
+    {
+        category:"Gifts",
+        name:"Surprise Box",
+        price:"Rs. 7,000",
+        description:"Large customised surprise gift box.",
+        images:[]
+    },
+
+    {
+        category:"Gifts",
+        name:"Gift Boxes",
+        price:"Rs. 3,000",
+        description:"Beautiful handmade customised gift box.",
+        images:[]
+    },
+
+    {
+        category:"Gifts",
+        name:"Chocolate Box",
+        price:"Rs. 10,000",
+        description:"Premium customised chocolate gift box.",
+        images:[]
+    },
+
+    {
+        category:"Gifts",
+        name:"Birthday Magazine (Handwritten)",
+        price:"Rs. 500",
+        description:"Handwritten birthday magazine.",
+        images:[]
+    },
+
+    {
+        category:"Gifts",
+        name:"Handwritten Letter",
+        price:"Rs. 200",
+        description:"Personalised handwritten letter.",
+        images:[]
     },
 
 
     {
-        category: "Gifts & Bouquets",
-        name: "Flower Bouquet",
-        price: "Rs. 1,000",
-        images: "images/flower-bouquet.jpg"
+        category:"Charms & Stickers",
+        name:"Bag Charms",
+        price:"Rs. 150",
+        description:"Cute decorative bag charms.",
+        images:[]
     },
 
     {
-        category: "Gifts & Bouquets",
-        name: "Chocolate & Floral Bouquet",
-        price: "Rs. 3,000",
-        images: "images/chocolate-floral-bouquet.jpg"
+        category:"Charms & Stickers",
+        name:"Bow Charms",
+        price:"Rs. 100",
+        description:"Cute handmade bow charms.",
+        images:[]
     },
 
     {
-        category: "Gifts & Bouquets",
-        name: "Picture Bouquet",
-        price: "Rs. 2,500",
-        images: "images/picture-bouquet.jpg"
+        category:"Charms & Stickers",
+        name:"Mini Bouquet Keychain",
+        price:"Rs. 250",
+        description:"Mini handmade bouquet keychain.",
+        images:[]
     },
 
     {
-        category: "Gifts & Bouquets",
-        name: "Occasional Bouquet",
-        price: "Rs. 6,000",
-        images: "images/occasional-bouquet.jpg"
-    },
-
-    {
-        category: "Gifts & Bouquets",
-        name: "Mini Chocolate Bouquet",
-        price: "Rs. 400",
-        images: "images/mini-chocolate-bouquet.jpg"
-    },
-
-    {
-        category: "Gifts & Bouquets",
-        name: "Chocolate Bouquet",
-        price: "Rs. 800",
-        images: "images/chocolate-bouquet.jpg"
-    },
-
-    {
-        category: "Gifts & Bouquets",
-        name: "Girly Bouquet",
-        price: "Rs. 9,000",
-        images: "images/girly-bouquet.jpg"
-    },
-
-    {
-        category: "Gifts & Bouquets",
-        name: "Brown Bouquet",
-        price: "Rs. 4,200",
-        images: "images/brown-bouquet.jpg"
-    },
-
-    {
-        category: "Gifts & Bouquets",
-        name: "Blue Bouquet",
-        price: "Rs. 3,600",
-        images: "images/blue-bouquet.jpg"
-    },
-
-    {
-        category: "Gifts & Bouquets",
-        name: "Pink Bouquet",
-        price: "Rs. 4,500",
-        images: "images/pink-bouquet.jpg"
-    },
-
-    {
-        category: "Gifts & Bouquets",
-        name: "Large Snack Bouquet",
-        price: "Rs. 2,000",
-        images: "images/snack-bouquet-large.jpg"
-    },
-
-    {
-        category: "Gifts & Bouquets",
-        name: "Small Snack Bouquet",
-        price: "Rs. 650",
-        images: "images/snack-bouquet-small.jpg"
+        category:"Charms & Stickers",
+        name:"Mini Sticker Packages",
+        price:"Rs. 50 for 2",
+        description:"Cute mini sticker packages.",
+        images:[]
     },
 
 
     {
-        category: "Chocolate & Money Bouquets",
-        name: "Rs. 100 Notes Bouquet",
-        price: "Rs. 21,000",
-        images: "images/chocolate-money-bouquet.jpg"
-    },
-
-    {
-        category: "Chocolate & Money Bouquets",
-        name: "Rs. 50 Notes Bouquet",
-        price: "Rs. 14,000",
-        images: "images/chocolate-money-bouquet.jpg"
+        category:"Accessories",
+        name:"Pearl Head Crown",
+        price:"Rs. 1,900",
+        description:"Elegant pearl head crown.",
+        images:[]
     },
 
 
     {
-        category: "Engagement Favours",
-        name: "Engagement Favours",
-        price: "Rs. 90",
-        images: "images/engagement-favour.jpg"
+        category:"Gifts & Bouquets",
+        name:"Flower Bouquet",
+        price:"Rs. 1,000",
+        description:"Handmade flower bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Chocolate & Floral Bouquet",
+        price:"Rs. 3,000",
+        description:"Beautiful chocolate and floral bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Picture Bouquet",
+        price:"Rs. 2,500",
+        description:"Personalised picture bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Occasional Bouquet",
+        price:"Rs. 6,000",
+        description:"Large customised occasional bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Mini Chocolate Bouquet",
+        price:"Rs. 400",
+        description:"Cute mini chocolate bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Chocolate Bouquet",
+        price:"Rs. 800",
+        description:"Handmade chocolate bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Girly Bouquet",
+        price:"Rs. 9,000",
+        description:"Large customised girly bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Brown Bouquet",
+        price:"Rs. 4,200",
+        description:"Aesthetic brown themed bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Blue Bouquet",
+        price:"Rs. 3,600",
+        description:"Aesthetic blue themed bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Pink Bouquet",
+        price:"Rs. 4,500",
+        description:"Pretty pink themed bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Large Snack Bouquet",
+        price:"Rs. 2,000",
+        description:"Large handmade snack bouquet.",
+        images:[]
+    },
+
+    {
+        category:"Gifts & Bouquets",
+        name:"Small Snack Bouquet",
+        price:"Rs. 650",
+        description:"Cute small snack bouquet.",
+        images:[]
     },
 
 
     {
-        category: "Mithai Toppers",
-        name: "Mithai Toppers",
-        price: "Rs. 45",
-        images: "images/mithai-topper.jpg"
+        category:"Chocolate & Money Bouquets",
+        name:"Rs. 100 Notes Bouquet",
+        price:"Rs. 21,000",
+        description:"Money bouquet made with Rs. 100 notes.",
+        images:[]
+    },
+
+    {
+        category:"Chocolate & Money Bouquets",
+        name:"Rs. 50 Notes Bouquet",
+        price:"Rs. 14,000",
+        description:"Money bouquet made with Rs. 50 notes.",
+        images:[]
     },
 
 
     {
-        category: "Cards & Business Stationery",
-        name: "Business Cards",
-        price: "Customisable",
-        images: "images/business-card.jpg"
-    },
-
-    {
-        category: "Cards & Business Stationery",
-        name: "Business Stickers",
-        price: "Customisable",
-        images: "images/business-stickers.jpg"
-    },
-
-    {
-        category: "Cards & Business Stationery",
-        name: "Wedding Cards",
-        price: "Customisable",
-        images: "images/wedding-cards.jpg"
-    },
-
-    {
-        category: "Cards & Business Stationery",
-        name: "Eid Cards",
-        price: "Customisable",
-        images: "images/eid-cards.jpg"
-    },
-
-    {
-        category: "Cards & Business Stationery",
-        name: "Custom Cards",
-        price: "Any type • Customisable",
-        images: "images/custom-cards.jpg"
+        category:"Engagement Favours",
+        name:"Engagement Favours",
+        price:"Rs. 90",
+        description:"Custom engagement favours.",
+        images:[]
     },
 
 
     {
-        category: "Satin Ribbon Bags",
-        name: "Lavender Small Pearl Satin Ribbon Bag",
-        price: "Rs. 2,300",
-        images: "images/lavender-bag.jpg"
+        category:"Mithai Toppers",
+        name:"Mithai Toppers",
+        price:"Rs. 45",
+        description:"Decorative handmade mithai toppers.",
+        images:[]
+    },
+
+
+    {
+        category:"Cards & Business Stationery",
+        name:"Business Cards",
+        price:"Customisable",
+        description:"Custom business cards.",
+        images:[]
     },
 
     {
-        category: "Satin Ribbon Bags",
-        name: "Black Satin Ribbon Bag with Charm",
-        price: "Rs. 3,000",
-        images: "images/black-bag.jpg"
+        category:"Cards & Business Stationery",
+        name:"Business Stickers",
+        price:"Customisable",
+        description:"Custom business stickers.",
+        images:[]
+    },
+
+    {
+        category:"Cards & Business Stationery",
+        name:"Wedding Cards",
+        price:"Customisable",
+        description:"Custom wedding cards.",
+        images:[]
+    },
+
+    {
+        category:"Cards & Business Stationery",
+        name:"Eid Cards",
+        price:"Customisable",
+        description:"Custom Eid cards.",
+        images:[]
+    },
+
+    {
+        category:"Cards & Business Stationery",
+        name:"Custom Cards",
+        price:"Any type • Customisable",
+        description:"Tell us your preferred design and we'll customise it.",
+        images:[]
+    },
+
+
+    {
+        category:"Satin Ribbon Bags",
+        name:"Lavender Small Pearl Satin Ribbon Bag",
+        price:"Rs. 2,300",
+        description:"Elegant lavender satin ribbon bag with pearl details.",
+        images:[]
+    },
+
+    {
+        category:"Satin Ribbon Bags",
+        name:"Black Satin Ribbon Bag with Charm",
+        price:"Rs. 3,000",
+        description:"Black satin ribbon bag with decorative charm.",
+        images:[]
     }
 
 ];
 
 
-/* =========================================================
+/* =========================
    CATEGORY ORDER
-========================================================= */
+========================= */
 
-const categories = [
-
+const categoryOrder = [
     "Ribbon Flowers & Bouquets",
     "Ribbon Gajras",
     "Bracelets & Bands",
@@ -1489,405 +1717,417 @@ const categories = [
     "Mithai Toppers",
     "Cards & Business Stationery",
     "Satin Ribbon Bags"
-
 ];
 
 
-/* =========================================================
-   ELEMENTS
-========================================================= */
+/* =========================
+   VARIABLES
+========================= */
+
+let selectedProduct = null;
+
+let currentOrderMessage = "";
+
+const productsContainer =
+    document.getElementById("productsContainer");
 
 const categoryNav =
     document.getElementById("categoryNav");
 
-const menu =
-    document.getElementById("menu");
+const menuLinks =
+    document.getElementById("menuLinks");
 
-const catalogue =
-    document.getElementById("catalogue");
+const orderModal =
+    document.getElementById("orderModal");
 
-const noResults =
-    document.getElementById("noResults");
-
-const topSearch =
-    document.getElementById("topSearch");
-
-const menuSearch =
-    document.getElementById("menuSearch");
+const successOverlay =
+    document.getElementById("successOverlay");
 
 
-/* =========================================================
-   CATEGORY NAVIGATION
-========================================================= */
+/* =========================
+   CREATE CATEGORY NAV
+========================= */
 
-categories.forEach(category => {
+function createCategoryNavigation(){
 
-    const id =
-        makeId(category);
+    categoryNav.innerHTML = "";
+    menuLinks.innerHTML = "";
 
+    categoryOrder.forEach(category => {
 
-    categoryNav.innerHTML += `
+        const id = slugify(category);
 
-        <a href="#${id}">
-            ${category}
-        </a>
+        const button = document.createElement("button");
 
-    `;
+        button.type = "button";
+        button.className = "category-btn";
+        button.textContent = category;
 
+        button.addEventListener("click", () => {
 
-    menu.innerHTML += `
+            document.getElementById(id)?.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
 
-        <a
-            href="#${id}"
-            onclick="closeMenu()"
-        >
-            ${category}
-        </a>
+            document.getElementById("menu").classList.remove("active");
 
-    `;
+        });
 
-});
-
-
-/* =========================================================
-   ABOUT MENU LINK
-========================================================= */
-
-menu.innerHTML += `
-
-    <a
-        href="#about"
-        onclick="closeMenu()"
-    >
-        🎀 About Us
-    </a>
-
-`;
+        categoryNav.appendChild(button);
 
 
-/* =========================================================
-   CREATE CATALOGUE
-========================================================= */
+        const menuButton = document.createElement("button");
 
-categories.forEach(category => {
+        menuButton.type = "button";
+        menuButton.textContent = category;
 
-    const productsInCategory =
-        products.filter(
-            product =>
-                product.category === category
-        );
+        menuButton.addEventListener("click", () => {
 
+            document.getElementById(id)?.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
 
-    const section =
-        document.createElement("section");
+            document.getElementById("menu").classList.remove("active");
 
+        });
 
-    section.className =
-        "section";
+        menuLinks.appendChild(menuButton);
 
+    });
 
-    section.id =
-        makeId(category);
+}
 
 
-    section.dataset.category =
-        category;
+/* =========================
+   SLUG
+========================= */
+
+function slugify(text){
+
+    return text
+        .toLowerCase()
+        .replace(/&/g,"and")
+        .replace(/[^a-z0-9]+/g,"-")
+        .replace(/^-|-$/g,"");
+
+}
 
 
-    section.innerHTML = `
+/* =========================
+   RENDER PRODUCTS
+========================= */
 
-        <div class="section-heading">
+function renderProducts(list = products){
 
-            <h2>
-                ${category}
-            </h2>
+    productsContainer.innerHTML = "";
 
-            <p>
-                Handmade & customisable pieces
-            </p>
+    const grouped = {};
 
-        </div>
+    list.forEach(product => {
 
-
-        <div class="product-grid"></div>
-
-    `;
-
-
-    const grid =
-        section.querySelector(
-            ".product-grid"
-        );
-
-
-    productsInCategory.forEach(
-        (product, index) => {
-
-            grid.appendChild(
-                createProductCard(
-                    product,
-                    `${category}-${index}`
-                )
-            );
-
+        if(!grouped[product.category]){
+            grouped[product.category] = [];
         }
-    );
+
+        grouped[product.category].push(product);
+
+    });
 
 
-    catalogue.appendChild(
-        section
-    );
+    categoryOrder.forEach(category => {
 
-});
+        if(!grouped[category] || !grouped[category].length){
+            return;
+        }
+
+        const section = document.createElement("section");
+
+        section.className = "category-section";
+
+        section.id = slugify(category);
 
 
-/* =========================================================
+        const title = document.createElement("div");
+
+        title.className = "category-title";
+
+        title.innerHTML = `
+            <h2>${escapeHtml(category)}</h2>
+            <div class="category-line"></div>
+        `;
+
+        section.appendChild(title);
+
+
+        const grid = document.createElement("div");
+
+        grid.className = "product-grid";
+
+
+        grouped[category].forEach(product => {
+
+            grid.appendChild(createProductCard(product));
+
+        });
+
+
+        section.appendChild(grid);
+
+        productsContainer.appendChild(section);
+
+    });
+
+
+    if(!productsContainer.children.length){
+
+        productsContainer.innerHTML = `
+            <div class="info-section">
+                <h2>No products found</h2>
+                <p>
+                    Try searching for another product or category.
+                </p>
+            </div>
+        `;
+
+    }
+
+}
+
+
+/* =========================
    PRODUCT CARD
-========================================================= */
+========================= */
 
-function createProductCard(
-    product,
-    uniqueId
-) {
+function createProductCard(product){
 
-    const card =
-        document.createElement(
-            "article"
-        );
+    const card = document.createElement("article");
+
+    card.className = "product-card";
 
 
-    card.className =
-        "product-card";
+    const media = document.createElement("div");
 
-
-    card.dataset.productName =
-        product.name.toLowerCase();
+    media.className = "product-media";
 
 
     const images =
-        product.images.split("|");
+        product.images && product.images.length
+            ? product.images
+            : [];
 
 
-    const imageBox =
-        document.createElement(
-            "div"
-        );
+    if(images.length){
+
+        const image = document.createElement("img");
+
+        image.src = images[0];
+
+        image.alt = product.name;
+
+        image.loading = "lazy";
+
+        image.addEventListener("click", () => {
+
+            openImageViewer(images[0]);
+
+        });
+
+        media.appendChild(image);
 
 
-    imageBox.className =
-        "product-image";
+        if(images.length > 1){
+
+            let currentIndex = 0;
 
 
-    imageBox.dataset.index =
-        "0";
+            const controls =
+                document.createElement("div");
+
+            controls.className =
+                "slider-controls";
 
 
-    function displayImage() {
+            const previous =
+                document.createElement("button");
 
-        const currentIndex =
-            Number(
-                imageBox.dataset.index
-            );
+            previous.type = "button";
 
+            previous.className = "slider-btn";
 
-        const currentImage =
-            images[currentIndex];
+            previous.innerHTML = "‹";
 
+            previous.addEventListener("click", event => {
 
-        imageBox.innerHTML = `
+                event.stopPropagation();
 
-            <a
-                href="${currentImage}"
-                target="_blank"
-                rel="noopener"
-            >
+                currentIndex =
+                    (currentIndex - 1 + images.length)
+                    % images.length;
 
-                <img
-                    src="${currentImage}"
-                    alt="${product.name}"
-                    onerror="this.style.display='none';"
-                >
+                image.src = images[currentIndex];
 
-            </a>
+                updateDots();
 
-        `;
+            });
 
 
-        if (images.length > 1) {
+            const next =
+                document.createElement("button");
 
-            imageBox.innerHTML += `
+            next.type = "button";
 
-                <button
-                    type="button"
-                    class="slider-button slider-prev"
-                    onclick="changeSlide(event, this, -1)"
-                    aria-label="Previous photo"
-                >
-                    ‹
-                </button>
+            next.className = "slider-btn";
+
+            next.innerHTML = "›";
+
+            next.addEventListener("click", event => {
+
+                event.stopPropagation();
+
+                currentIndex =
+                    (currentIndex + 1)
+                    % images.length;
+
+                image.src = images[currentIndex];
+
+                updateDots();
+
+            });
 
 
-                <button
-                    type="button"
-                    class="slider-button slider-next"
-                    onclick="changeSlide(event, this, 1)"
-                    aria-label="Next photo"
-                >
-                    ›
-                </button>
+            controls.appendChild(previous);
+            controls.appendChild(next);
+
+            media.appendChild(controls);
 
 
-                <div class="image-dots">
+            const dots =
+                document.createElement("div");
 
-                    ${images.map(
-                        (image, index) => `
+            dots.className = "dots";
 
-                            <span
-                                class="image-dot ${
-                                    index === currentIndex
-                                    ? "active"
-                                    : ""
-                                }"
-                                onclick="
-                                    selectSlide(
-                                        event,
-                                        this,
-                                        ${index}
-                                    )
-                                "
-                            ></span>
 
-                        `
-                    ).join("")}
+            images.forEach((_, index) => {
 
-                </div>
+                const dot =
+                    document.createElement("span");
 
-            `;
+                dot.className =
+                    "dot" + (index === 0 ? " active" : "");
+
+                dots.appendChild(dot);
+
+            });
+
+
+            function updateDots(){
+
+                [...dots.children].forEach(
+                    (dot,index) => {
+
+                        dot.classList.toggle(
+                            "active",
+                            index === currentIndex
+                        );
+
+                    }
+                );
+
+            }
+
+
+            media.appendChild(dots);
 
         }
 
+    }else{
+
+        media.innerHTML = `
+            <div style="
+                width:100%;
+                height:100%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                text-align:center;
+                padding:20px;
+                color:var(--muted);
+                font-size:13px;
+            ">
+                📷 Product photo coming soon
+            </div>
+        `;
+
     }
-
-
-    displayImage();
-
-
-    card.appendChild(
-        imageBox
-    );
 
 
     const info =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
+
+    info.className = "product-info";
 
 
-    info.className =
-        "product-info";
+    const name =
+        document.createElement("div");
+
+    name.className = "product-name";
+
+    name.textContent = product.name;
 
 
-    let description =
-        "Handmade piece available in your preferred custom colours.";
+    const price =
+        document.createElement("div");
+
+    price.className = "product-price";
+
+    price.textContent = product.price;
 
 
-    if (
-        product.name ===
-        "Ribbon Vase Bunch"
-    ) {
+    const description =
+        document.createElement("div");
 
-        description =
-            "Price depends on quantity and design.";
+    description.className = "product-description";
 
-    }
-
-
-    if (
-        product.name ===
-        "Custom Cards"
-    ) {
-
-        description =
-            "Any type of card can be customised.";
-
-    }
+    description.textContent =
+        product.description ||
+        "Handmade with love. Custom colours available.";
 
 
-    if (
-        product.name ===
-        "Chocolate Box"
-    ) {
+    const actions =
+        document.createElement("div");
 
-        description =
-            "A beautiful handmade chocolate gift box.";
-
-    }
+    actions.className = "product-actions";
 
 
-    if (
-        product.name ===
-        "Lavender Small Pearl Satin Ribbon Bag"
-    ) {
+    const orderButton =
+        document.createElement("button");
 
-        description =
-            "Elegant satin ribbon bag decorated with small pearls.";
+    orderButton.type = "button";
 
-    }
+    orderButton.className = "order-button";
 
-
-    if (
-        product.name ===
-        "Black Satin Ribbon Bag with Charm"
-    ) {
-
-        description =
-            "Black satin ribbon bag finished with a decorative charm.";
-
-    }
+    orderButton.innerHTML =
+        "💌 Order This Item";
 
 
-    /* =====================================================
-       DIRECT INSTAGRAM ORDER BUTTON
-    ===================================================== */
+    orderButton.addEventListener("click", () => {
 
-    info.innerHTML = `
+        openOrderModal(product);
 
-        <h3 class="product-name">
-            ${product.name}
-        </h3>
+    });
 
 
-        <div class="product-description">
-            ${description}
-        </div>
+    actions.appendChild(orderButton);
 
+    info.appendChild(name);
+    info.appendChild(price);
+    info.appendChild(description);
+    info.appendChild(actions);
 
-        <div class="product-price">
-            ${product.price}
-        </div>
-
-
-        <div class="custom-colours">
-            Custom colours available
-        </div>
-
-
-        <a
-            class="order-button"
-            href="${INSTAGRAM_DM}"
-            target="_blank"
-            rel="noopener"
-            aria-label="Order ${product.name} on Instagram"
-        >
-            💌 Order This Item
-        </a>
-
-    `;
-
-
-    card.appendChild(
-        info
-    );
+    card.appendChild(media);
+    card.appendChild(info);
 
 
     return card;
@@ -1895,371 +2135,313 @@ function createProductCard(
 }
 
 
-/* =========================================================
-   LIVE SEARCH
-========================================================= */
+/* =========================
+   ESCAPE HTML
+========================= */
 
-function filterProducts(
-    searchTerm
-) {
+function escapeHtml(text){
 
-    const term =
-        searchTerm
-            .trim()
-            .toLowerCase();
-
-
-    let visibleProducts =
-        0;
-
-
-    document
-        .querySelectorAll(
-            ".product-card"
-        )
-        .forEach(card => {
-
-            const productName =
-                card.dataset.productName;
-
-
-            const category =
-                card
-                    .closest(".section")
-                    .dataset.category
-                    .toLowerCase();
-
-
-            const matches =
-                !term ||
-                productName.includes(term) ||
-                category.includes(term);
-
-
-            card.style.display =
-                matches
-                ? "flex"
-                : "none";
-
-
-            if (matches) {
-
-                visibleProducts++;
-
-            }
-
-        });
-
-
-    document
-        .querySelectorAll(
-            ".section"
-        )
-        .forEach(section => {
-
-            const cards =
-                section.querySelectorAll(
-                    ".product-card"
-                );
-
-
-            let sectionHasVisibleCard =
-                false;
-
-
-            cards.forEach(card => {
-
-                if (
-                    card.style.display !==
-                    "none"
-                ) {
-
-                    sectionHasVisibleCard =
-                        true;
-
-                }
-
-            });
-
-
-            section.style.display =
-                sectionHasVisibleCard
-                ? "block"
-                : "none";
-
-        });
-
-
-    noResults.style.display =
-        visibleProducts === 0
-        ? "block"
-        : "none";
+    return String(text)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 
-/* =========================================================
-   SEARCH CONNECTION
-========================================================= */
+/* =========================
+   OPEN ORDER MODAL
+========================= */
 
-topSearch.addEventListener(
-    "input",
-    function() {
+function openOrderModal(product){
 
-        menuSearch.value =
-            this.value;
+    selectedProduct = product;
+
+    document.getElementById(
+        "selectedProductName"
+    ).textContent = product.name;
+
+    document.getElementById(
+        "selectedProductPrice"
+    ).textContent = product.price;
 
 
-        filterProducts(
-            this.value
+    document.getElementById("orderForm").reset();
+
+    document.getElementById("quantity").value = "1";
+
+
+    orderModal.classList.add("active");
+
+    orderModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+/* =========================
+   CLOSE ORDER MODAL
+========================= */
+
+function closeOrderModal(){
+
+    orderModal.classList.remove("active");
+
+    orderModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================
+   SUCCESS POPUP
+========================= */
+
+function showSuccessPopup(){
+
+    successOverlay.classList.add("active");
+
+    successOverlay.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+}
+
+
+/* =========================
+   CLOSE SUCCESS POPUP
+========================= */
+
+function closeSuccessPopup(){
+
+    successOverlay.classList.remove("active");
+
+    successOverlay.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+}
+
+
+/* =========================
+   CONTINUE TO INSTAGRAM
+========================= */
+
+function continueToInstagram(){
+
+    closeSuccessPopup();
+
+    window.open(
+        INSTAGRAM_DM,
+        "_blank",
+        "noopener"
+    );
+
+}
+
+
+/* =========================
+   COPY ORDER MESSAGE
+========================= */
+
+async function copyOrderMessage(message){
+
+    currentOrderMessage = message;
+
+
+    /* Modern clipboard */
+    try{
+
+        if(
+            navigator.clipboard &&
+            window.isSecureContext
+        ){
+
+            await navigator.clipboard.writeText(message);
+
+            return true;
+
+        }
+
+    }catch(error){
+
+        console.log(
+            "Modern clipboard failed:",
+            error
         );
 
     }
-);
 
 
-menuSearch.addEventListener(
-    "input",
-    function() {
+    /* Fallback */
+    try{
 
-        topSearch.value =
-            this.value;
+        const textarea =
+            document.createElement("textarea");
 
+        textarea.value = message;
 
-        filterProducts(
-            this.value
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+
+        document.body.appendChild(textarea);
+
+        textarea.focus();
+        textarea.select();
+
+        const copied =
+            document.execCommand("copy");
+
+        textarea.remove();
+
+        return copied;
+
+    }catch(error){
+
+        console.log(
+            "Fallback clipboard failed:",
+            error
         );
+
+        return false;
 
     }
-);
+
+}
 
 
-/* =========================================================
-   SLIDER
-========================================================= */
+/* =========================
+   ORDER FORM
+========================= */
 
-function getProductFromCard(
-    media
-) {
+document.getElementById("orderForm")
+.addEventListener("submit", async function(event){
 
-    const card =
-        media.closest(
-            ".product-card"
-        );
+    event.preventDefault();
+
+
+    if(!selectedProduct){
+        return;
+    }
 
 
     const name =
-        card
-            .querySelector(
-                ".product-name"
-            )
-            .textContent
-            .trim();
+        document.getElementById("customerName")
+        .value
+        .trim();
 
 
-    return products.find(
-        product =>
-            product.name === name
-    );
-
-}
+    const quantity =
+        document.getElementById("quantity")
+        .value;
 
 
-function changeSlide(
-    event,
-    button,
-    direction
-) {
-
-    event.preventDefault();
-
-    event.stopPropagation();
+    const colour =
+        document.getElementById("colour")
+        .value
+        .trim();
 
 
-    const media =
-        button.closest(
-            ".product-image"
+    const deliveryMethod =
+        document.getElementById("deliveryMethod")
+        .value;
+
+
+    const requiredDate =
+        document.getElementById("requiredDate")
+        .value;
+
+
+    const additionalDetails =
+        document.getElementById("additionalDetails")
+        .value
+        .trim();
+
+
+    const deliveryCharge =
+        deliveryMethod.includes("Delivery")
+            ? "Rs. 250"
+            : "Rs. 0";
+
+
+    const message =
+
+`🎀 NEW ORDER — Wrap & Wow 5
+
+👤 Name: ${name}
+
+🎁 Product: ${selectedProduct.name}
+
+💰 Price: ${selectedProduct.price}
+
+🔢 Quantity: ${quantity}
+
+🎨 Preferred Colour: ${colour || "Not specified"}
+
+🚚 Delivery/Pickup: ${deliveryMethod}
+
+💵 Delivery Charge: ${deliveryCharge}
+
+📅 Required Date: ${requiredDate}
+
+📝 Additional Details:
+${additionalDetails || "None"}
+
+Please confirm my order and let me know the total amount. 💕`;
+
+
+    const copied =
+        await copyOrderMessage(message);
+
+
+    if(copied){
+
+        closeOrderModal();
+
+        showSuccessPopup();
+
+        /*
+         * Instagram opens after the customer
+         * sees the clear success message.
+         */
+
+    }else{
+
+        alert(
+            "We couldn't copy the order details automatically. " +
+            "Please try again, or copy the details manually."
         );
-
-
-    const product =
-        getProductFromCard(
-            media
-        );
-
-
-    if (!product) return;
-
-
-    const images =
-        product.images.split("|");
-
-
-    let index =
-        Number(
-            media.dataset.index
-        );
-
-
-    index += direction;
-
-
-    if (index < 0) {
-
-        index =
-            images.length - 1;
 
     }
 
-
-    if (
-        index >= images.length
-    ) {
-
-        index = 0;
-
-    }
+});
 
 
-    media.dataset.index =
-        index;
+/* =========================
+   CLOSE MODAL OUTSIDE
+========================= */
 
-
-    updateSlide(
-        media,
-        images,
-        index
-    );
-
-}
-
-
-function selectSlide(
-    event,
-    dot,
-    index
-) {
-
-    event.preventDefault();
-
-    event.stopPropagation();
-
-
-    const media =
-        dot.closest(
-            ".product-image"
-        );
-
-
-    const product =
-        getProductFromCard(
-            media
-        );
-
-
-    if (!product) return;
-
-
-    const images =
-        product.images.split("|");
-
-
-    media.dataset.index =
-        index;
-
-
-    updateSlide(
-        media,
-        images,
-        index
-    );
-
-}
-
-
-function updateSlide(
-    media,
-    images,
-    index
-) {
-
-    const link =
-        media.querySelector(
-            "a"
-        );
-
-
-    const image =
-        media.querySelector(
-            "img"
-        );
-
-
-    link.href =
-        images[index];
-
-
-    image.src =
-        images[index];
-
-
-    const dots =
-        media.querySelectorAll(
-            ".image-dot"
-        );
-
-
-    dots.forEach(
-        (dot, dotIndex) => {
-
-            dot.classList.toggle(
-                "active",
-                dotIndex === index
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   MENU
-========================================================= */
-
-function toggleMenu() {
-
-    document
-        .getElementById("menu")
-        .classList.toggle(
-            "open"
-        );
-
-}
-
-
-function closeMenu() {
-
-    document
-        .getElementById("menu")
-        .classList.remove(
-            "open"
-        );
-
-}
-
-
-document.addEventListener(
+orderModal.addEventListener(
     "click",
-    function(event) {
+    function(event){
 
-        if (
-            !event.target.closest(
-                ".header"
-            )
-        ) {
+        if(event.target === orderModal){
 
-            closeMenu();
+            closeOrderModal();
 
         }
 
@@ -2267,26 +2449,183 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   SAFE SECTION IDS
-========================================================= */
+/* =========================
+   SUCCESS OUTSIDE CLICK
+========================= */
 
-function makeId(text) {
+successOverlay.addEventListener(
+    "click",
+    function(event){
 
-    return text
-        .toLowerCase()
-        .replace(
-            /[^a-z0-9]+/g,
-            "-"
-        )
-        .replace(
-            /^-|-$/g,
-            ""
-        );
+        if(event.target === successOverlay){
+
+            closeSuccessPopup();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   ESCAPE KEY
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeOrderModal();
+            closeSuccessPopup();
+            closeImageViewer();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   IMAGE VIEWER
+========================= */
+
+function openImageViewer(src){
+
+    const viewer =
+        document.getElementById("imageViewer");
+
+    const image =
+        document.getElementById("viewerImage");
+
+    image.src = src;
+
+    viewer.classList.add("active");
 
 }
+
+
+function closeImageViewer(){
+
+    document
+        .getElementById("imageViewer")
+        .classList.remove("active");
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function performSearch(value){
+
+    const search =
+        value
+        .trim()
+        .toLowerCase();
+
+
+    if(!search){
+
+        renderProducts();
+
+        return;
+
+    }
+
+
+    const filtered =
+        products.filter(product =>
+
+            product.name
+                .toLowerCase()
+                .includes(search)
+
+            ||
+
+            product.category
+                .toLowerCase()
+                .includes(search)
+
+            ||
+
+            product.description
+                .toLowerCase()
+                .includes(search)
+
+        );
+
+
+    renderProducts(filtered);
+
+}
+
+
+document
+    .getElementById("desktopSearch")
+    .addEventListener(
+        "input",
+        function(){
+
+            const value = this.value;
+
+            document
+                .getElementById("mobileSearch")
+                .value = value;
+
+            performSearch(value);
+
+        }
+    );
+
+
+document
+    .getElementById("mobileSearch")
+    .addEventListener(
+        "input",
+        function(){
+
+            const value = this.value;
+
+            document
+                .getElementById("desktopSearch")
+                .value = value;
+
+            performSearch(value);
+
+        }
+    );
+
+
+/* =========================
+   MENU
+========================= */
+
+document
+    .getElementById("menuBtn")
+    .addEventListener(
+        "click",
+        function(){
+
+            document
+                .getElementById("menu")
+                .classList.toggle("active");
+
+        }
+    );
+
+
+/* =========================
+   START WEBSITE
+========================= */
+
+createCategoryNavigation();
+
+renderProducts();
 
 </script>
 
 </body>
-</html>
+    </html>
