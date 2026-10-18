@@ -7,7 +7,7 @@
 <title>Wrap & Wow 5 | Handmade Gifts</title>
 
 <meta name="description"
-content="Wrap & Wow 5 - Handmade flowers, bouquets, gifts, accessories and customised creations.">
+content="Wrap & Wow 5 - Handmade flowers, bouquets, gifts, accessories, table mats and customised creations.">
 
 <style>
 
@@ -541,6 +541,68 @@ header {
 
 
 /* =========================
+   CUSTOMER FEEDBACK
+========================= */
+
+.feedback-section {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 25px 18px 55px;
+    text-align: center;
+}
+
+.feedback-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 25px 18px;
+    box-shadow: var(--shadow);
+}
+
+.feedback-box h2 {
+    color: var(--rose-dark);
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.feedback-box p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.feedback-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.feedback-buttons button {
+    min-width: 100px;
+    padding: 10px 22px;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    background: var(--cream);
+    color: var(--rose-dark);
+    transition: .2s;
+}
+
+.feedback-buttons button:hover,
+.feedback-buttons button.selected {
+    background: var(--rose);
+    color: white;
+}
+
+#feedbackMessage {
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: var(--rose-dark);
+    font-size: 13px;
+}
+
+
+/* =========================
    MODAL
 ========================= */
 
@@ -889,6 +951,10 @@ footer p {
         font-size: 11px;
         padding: 9px 5px;
     }
+
+    .feedback-box {
+        padding: 22px 14px;
+    }
 }
 
 @media (max-width: 380px) {
@@ -998,6 +1064,10 @@ footer p {
                     About Us
                 </a>
 
+                <a href="#feedback" onclick="closeMenu()">
+                    Customer Feedback
+                </a>
+
                 <a
                     href="https://ig.me/m/wrapandwow5"
                     target="_blank"
@@ -1041,7 +1111,7 @@ footer p {
 
     <p>
         Handmade flowers, bouquets, gifts, accessories,
-        cards and customised creations — lovingly made
+        table mats, cards and customised creations — lovingly made
         to make every moment special. ♡
     </p>
 
@@ -1231,6 +1301,53 @@ footer p {
 
 </section>
 
+
+<!-- =========================
+     CUSTOMER FEEDBACK
+========================= -->
+
+<section
+    class="feedback-section"
+    id="feedback"
+>
+
+    <div class="feedback-box">
+
+        <h2>
+            Is It Worth a Visit? ♡
+        </h2>
+
+        <p>
+            We would love to know what you think about Wrap & Wow 5!
+        </p>
+
+        <div class="feedback-buttons">
+
+            <button
+                type="button"
+                onclick="submitFeedback('Yes', this)"
+            >
+                ♡ Yes
+            </button>
+
+            <button
+                type="button"
+                onclick="submitFeedback('No', this)"
+            >
+                No
+            </button>
+
+        </div>
+
+        <p
+            id="feedbackMessage"
+            aria-live="polite"
+        ></p>
+
+    </div>
+
+</section>
+
 </main>
 
 
@@ -1270,7 +1387,7 @@ footer p {
 
             <div class="form-group">
 
-                <label>
+                <label for="customerName">
                     Your Name *
                 </label>
 
@@ -1286,7 +1403,7 @@ footer p {
 
             <div class="form-group">
 
-                <label>
+                <label for="quantity">
                     Quantity *
                 </label>
 
@@ -1303,7 +1420,7 @@ footer p {
 
             <div class="form-group">
 
-                <label>
+                <label for="colour">
                     Preferred Colour
                 </label>
 
@@ -1318,7 +1435,7 @@ footer p {
 
             <div class="form-group">
 
-                <label>
+                <label for="deliveryType">
                     Delivery / Pickup *
                 </label>
 
@@ -1346,7 +1463,7 @@ footer p {
 
             <div class="form-group">
 
-                <label>
+                <label for="requiredDate">
                     Required Date *
                 </label>
 
@@ -1361,7 +1478,7 @@ footer p {
 
             <div class="form-group">
 
-                <label>
+                <label for="details">
                     Additional Details / Customisation
                 </label>
 
@@ -1540,6 +1657,7 @@ footer p {
         <a
             href="https://www.instagram.com/wrapandwow5/"
             target="_blank"
+            rel="noopener noreferrer"
         >
             📸 Instagram @wrapandwow5
         </a>
@@ -1547,6 +1665,7 @@ footer p {
         <a
             href="https://www.tiktok.com/@wrapandwow.5"
             target="_blank"
+            rel="noopener noreferrer"
         >
             🎵 TikTok @wrapandwow.5
         </a>
@@ -2015,8 +2134,7 @@ const products = [
         description: "Special handmade bouquet for memorable occasions.",
         images: [
             "images/20260202_152616.jpg",
-            "images/20260202_152624.jpg",
-        
+            "images/20260202_152624.jpg"
         ]
     },
 
@@ -2026,7 +2144,7 @@ const products = [
         price: "Rs. 400",
         description: "Cute mini chocolate bouquet.",
         images: [
-            "images/Snapchat-1529619181.jpg",
+            "images/Snapchat-1529619181.jpg"
         ]
     },
 
@@ -2037,7 +2155,7 @@ const products = [
         description: "Beautiful handmade chocolate bouquet.",
         images: [
             "images/20260503_143627.jpg",
-"images/IMG_20260306_043445_981.jpg",
+            "images/IMG_20260306_043445_981.jpg"
         ]
     },
 
@@ -2047,7 +2165,7 @@ const products = [
         price: "Rs. 9,000",
         description: "Large customised girly gift bouquet.",
         images: [
-            "images/20260222_215951.jpg",
+            "images/20260222_215951.jpg"
         ]
     },
 
@@ -2057,7 +2175,7 @@ const products = [
         price: "Rs. 4,200",
         description: "Elegant brown-themed handmade bouquet.",
         images: [
-            "images/IMG_20260516_003200_907.jpg",
+            "images/IMG_20260516_003200_907.jpg"
         ]
     },
 
@@ -2067,7 +2185,7 @@ const products = [
         price: "Rs. 3,600",
         description: "Beautiful blue-themed handmade bouquet.",
         images: [
-            "images/20260511_235337.jpg",
+            "images/20260511_235337.jpg"
         ]
     },
 
@@ -2077,7 +2195,7 @@ const products = [
         price: "Rs. 4,500",
         description: "Pretty pink-themed handmade bouquet.",
         images: [
-            "images/c7582bc92c20747cff5686a9146757c4_1.jpeg",
+            "images/c7582bc92c20747cff5686a9146757c4_1.jpeg"
         ]
     },
 
@@ -2087,7 +2205,7 @@ const products = [
         price: "Rs. 2,000",
         description: "Large handmade snack bouquet.",
         images: [
-            "images/IMG_20260815_202147_566.jpg",
+            "images/IMG_20260815_202147_566.jpg"
         ]
     },
 
@@ -2099,7 +2217,7 @@ const products = [
         images: [
             "images/1791060003655.jpg",
             "images/1791060013943.jpg",
-"images/1791060003655.jpg",
+            "images/1791060003655.jpg"
         ]
     },
 
@@ -2113,7 +2231,7 @@ const products = [
         description: "Handmade money and flower bouquet using Rs. 100 notes.",
         images: [
             "images/a0d0a5e0aa520769d1b7b56157715e63_3.jpeg",
-"images/c7bef5f169b7c716789334e1009204c2_0.jpeg",
+            "images/c7bef5f169b7c716789334e1009204c2_0.jpeg"
         ]
     },
 
@@ -2123,7 +2241,7 @@ const products = [
         price: "Rs. 14,000",
         description: "Handmade money and flower bouquet using Rs. 50 notes.",
         images: [
-            "images/IMG-20260308-WA0020.jpg",
+            "images/IMG-20260308-WA0020.jpg"
         ]
     },
 
@@ -2136,7 +2254,7 @@ const products = [
         price: "Rs. 90",
         description: "Cute handmade engagement favours.",
         images: [
-            "images/a1455ef5f2ef226986b7d397e4c1ba55_0.jpeg",
+            "images/a1455ef5f2ef226986b7d397e4c1ba55_0.jpeg"
         ]
     },
 
@@ -2149,7 +2267,7 @@ const products = [
         price: "Rs. 45",
         description: "Cute customised toppers for mithai.",
         images: [
-            "images/6c522693135215a9fc5ad0a77b47f413_0.jpeg",
+            "images/6c522693135215a9fc5ad0a77b47f413_0.jpeg"
         ]
     },
 
@@ -2178,7 +2296,7 @@ const products = [
         price: "Customisable",
         description: "Personalised wedding cards.",
         images: [
-            "images/IMG-20260907-WA0045.jpg",
+            "images/IMG-20260907-WA0045.jpg"
         ]
     },
 
@@ -2188,7 +2306,7 @@ const products = [
         price: "Customisable",
         description: "Beautiful personalised Eid cards.",
         images: [
-            "images/IMG_20260313_170042_911.jpg",
+            "images/IMG_20260313_170042_911.jpg"
         ]
     },
 
@@ -2198,7 +2316,7 @@ const products = [
         price: "Any type • Customisable",
         description: "Tell us what kind of card you need and we can customise it.",
         images: [
-            "images/d62ed4f093698ab472b822b85e5d834a_0.webp",
+            "images/d62ed4f093698ab472b822b85e5d834a_0.webp"
         ]
     },
 
@@ -2212,9 +2330,9 @@ const products = [
         description: "Elegant lavender satin ribbon bag decorated with small pearls.",
         images: [
             "images/IMG_20260906_210841_208.jpg",
-"images/IMG_20260906_210841_259.jpg",
-"images/IMG_20260906_210841_290.jpg",
-"images/IMG_20260906_210841_309.jpg",
+            "images/IMG_20260906_210841_259.jpg",
+            "images/IMG_20260906_210841_290.jpg",
+            "images/IMG_20260906_210841_309.jpg"
         ]
     },
 
@@ -2225,10 +2343,23 @@ const products = [
         description: "Elegant black satin ribbon bag with a decorative charm.",
         images: [
             "images/IMG_20260921_193832_842.jpg",
-"images/IMG_20260921_193832_931.jpg",
-"images/IMG_20260921_193832_960.jpg",
-"images/IMG_20260919_194821_934.jpg",
-"images/IMG_20260919_194821_878.jpg",
+            "images/IMG_20260921_193832_931.jpg",
+            "images/IMG_20260921_193832_960.jpg",
+            "images/IMG_20260919_194821_934.jpg",
+            "images/IMG_20260919_194821_878.jpg"
+        ]
+    },
+
+
+    /* TABLE MATS */
+
+    {
+        category: "Table Mats",
+        name: "Handmade Table Mats",
+        price: "Rs. 1,000",
+        description: "Beautiful handmade table mats, carefully crafted to add a special touch to your table.",
+        images: [
+            "images/table-mats.jpg"
         ]
     }
 
@@ -2962,6 +3093,38 @@ function closeViewer() {
 
 
 /* =========================================
+   CUSTOMER FEEDBACK
+========================================= */
+
+function submitFeedback(answer, button) {
+
+    document
+        .querySelectorAll(".feedback-buttons button")
+        .forEach(btn => {
+            btn.classList.remove("selected");
+        });
+
+    button.classList.add("selected");
+
+    const message =
+        document.getElementById("feedbackMessage");
+
+    if (answer === "Yes") {
+
+        message.textContent =
+            "Thank you for your lovely feedback! ♡";
+
+    } else {
+
+        message.textContent =
+            "Thank you for sharing your feedback! ♡";
+
+    }
+
+}
+
+
+/* =========================================
    CLOSE MODALS
 ========================================= */
 
@@ -3042,4 +3205,4 @@ renderProducts();
 </script>
 
 </body>
-        </html>
+                    </html>
